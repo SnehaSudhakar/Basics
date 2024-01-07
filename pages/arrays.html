@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <!--27) Accept 10 elements with for loop -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Array with for loop</h3>
+        <input type="text" maxlength="10" class="form-control" id="num11"
+            placeholder="Enter 10 values(no space/commas) ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check11()">Display array</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result11" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check11() {
+            var item = num11.value;
+            console.log(typeof item + item)
+            var arr = new Array(10); //declare array with size
+            arr = item.split("");  // split the items
+            result11.innerHTML = `Array elements: <br>`;
+            for (var i = 0; i < arr.length; i++) {  //fetching array items
+                result11.innerHTML += `${arr[i]} `;
+            }
+        }
+        function clrScreen() {
+            num11.value = "";
+            result11.innerHTML = "";
+        }
+    </script>
+
+    <!-- Accept 10 elements without for loop -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Array without for loop</h3>
+
+        <input type="text" maxlength="10" class="form-control " id="num12"
+            placeholder="Enter 10 values(no space/commas)">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check12()">Display Array</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result12" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check12() {
+            var item = num12.value;
+            var arr = new Array(10);
+            arr = item.split(""); //split the elements and assign to array
+            result12.innerHTML = `Array items: ${arr}`;
+        }
+        function clrScreen() {
+            num12.value = "";
+            result12.innerHTML = "";
+        }
+    </script>
+
+    <!--28) Reverse of array -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Reverse of array</h3>
+        <input type="text" class="form-control " id="num2" placeholder="Enter elements with space ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check2()">Reverse</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result2" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check2() {
+            var items = num2.value;
+            var arr1 = items.split(" ");
+            let = arr1.reverse();
+            result2.innerHTML += `Reverse is : ${arrRev}`;
+        }
+        function clrScreen() {
+            num2.value = "";
+            result2.innerHTML = "";
+        }
+    </script>
+
+    <!--29) Sum of elements -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Sum of elements of array</h3>
+        <input type="text" class="form-control " id="num3" placeholder="Enter numbers with space">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check3()">Sum</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result3" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check3() {
+            var items = num3.value;
+            var arr = items.split(" ");
+            let sum = 0;
+            arr.forEach(element => { //iterating each element
+                sum = sum + parseInt(element)
+            });
+            result3.innerHTML += `Sum of elements :${sum}`;
+        }
+        function clrScreen() {
+            num3.value = "";
+            result3.innerHTML = "";
+        }
+    </script>
+
+    <!--30) Addition of 2 arrays -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Sum of 2 arrays</h3>
+        <div class="inputbox">
+            <label for="num41" class="form-control text-black text-start bg-transparent">First Array:</label>
+            <input type="text" class="form-control" id="num41" placeholder="Enter 5 numbers with space">
+        </div>
+        <div class="inputbox">
+            <label for="num41" class="form-control text-black text-start bg-transparent">Second Array:</label>
+            <input type="text" class="form-control " id="num42" placeholder="Enter 5 numbers with space">
+        </div>
+        <button class="btn btn-primary mt-2 w-50" onclick="Check4()">Array Sum</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result4" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check4() {
+            var item1 = num41.value;
+            var item2 = num42.value;
+            let arr1 = item1.split(" ");
+            let arr2 = item2.split(" ");
+            let Sum = arr1.map((value, index) => parseInt(value) + parseInt(arr2[index]));
+            result4.innerHTML = `ArraySum : ${Sum}`;
+        }
+        function clrScreen() {
+            num41.value = "";
+            num42.value = "";
+            result4.innerHTML = "";
+        }
+    </script>
+
+    <!--31) Largest element in array -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Largest element of array</h3>
+        <input type="text" class="form-control " id="num5" placeholder="Enter numbers with space ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check5()">Print</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result5" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check5() {
+            var items = num5.value;
+            var arr = items.split(" ");
+            var out = Math.max(...arr) //math function to find largest element
+            result5.innerHTML = `Largest element : ${out}`
+        }
+        function clrScreen() {
+            num5.value = "";
+            result5.innerHTML = "";
+        }
+    </script>
+
+    <!--32) Sort array in Ascenting order -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Array sorting</h3>
+        <input type="text" class="form-control " id="num6" placeholder="Enter numbers with space ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check6()">Sort</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result6" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check6() {
+            var items = num6.value;
+            var arr = items.split(" ");
+            var out = arr.sort(function (a, b) { return a - b })//compare function is used with sort to sort in ascenting order
+            result6.innerHTML = `Sorted array : ${out}`;
+        }
+        function clrScreen() {
+            num6.value = "";
+            result6.innerHTML = "";
+        }
+    </script>
+
+    <!--33) Search element -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Array search</h3>
+        <input type="text" class="form-control mt-2" id="num71" placeholder="Enter numbers with space ">
+        <input type="text" class="form-control mt-2" id="num72" placeholder="Enter element to search ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check7()">Search</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result7" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check7() {
+            var items = num71.value;
+            var elm = num72.value;
+            var arr = items.split(" ");
+            let out = arr.includes(elm);
+            if (out == true) {
+                result7.innerHTML = `${elm} is found in the array `;
+            } else {
+                result7.innerHTML = `${elm} is not in the array `;
+            }
+        }
+        function clrScreen() {
+            num71.value = "";
+            num72.value = "";
+            result7.innerHTML = "";
+        }
+    </script>
+
+    <!--34) Array-Same or not -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Arrays Same or not</h3>
+        <div class="inputbox">
+            <label for="num81" class="form-control text-black text-start bg-transparent">First Array:</label>
+            <input type="text" class="form-control" id="num81" placeholder="Enter numbers with space">
+        </div>
+        <div class="inputbox">
+            <label for="num81" class="form-control text-black text-start bg-transparent">Second Array:</label>
+            <input type="text" class="form-control " id="num82" placeholder="Enter numbers with space">
+        </div>
+        <button class="btn btn-primary mt-2 w-50" onclick="Check8()">Equal or not?</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result8" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check8() {
+            var items1 = num81.value;
+            var items2 = num82.value;
+            var arr1 = items1.split(" ");
+            var arr2 = items2.split(" ");
+            var status = true;
+
+            if (arr1.length == arr2.length) {      //comparing array length
+                for (let i = 0; i < arr1.length; i++) {  //itrating through array elements
+                    if (arr1[i] === arr2[i]) {
+                        status = true;
+                    } else {
+                        status = false;
+                    }
+                }
+            } else {
+                status = false;
+            }
+
+            if (status) {
+                result8.innerHTML = "Both arrays are equal";
+            } else {
+                result8.innerHTML = "Both arrays are not equal";
+            }
+        }
+        function clrScreen() {
+            num81.value = "";
+            num82.value = "";
+            result8.innerHTML = "";
+        }
+    </script>
+
+    <!--35) Remove an element -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">Remove element</h3>
+        <input type="text" class="form-control mt-2" id="num91" placeholder="Enter numbers with space ">
+        <input type="text" class="form-control mt-2" id="num92" placeholder="Enter 1 element to remove ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check9()">Remove</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result9" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check9() {
+            var items = num91.value;
+            var elm = num92.value;
+            var arr = items.split(" ");
+            var removedItm = arr.splice(arr.indexOf(elm), 1); //splice(item to remove,number of items to remove)
+            result9.innerHTML = `Array : ${arr}`;
+        }
+        function clrScreen() {
+            num91.value = "";
+            num92.value = "";
+            result9.innerHTML = "";
+        }
+    </script>
+
+    <!--36) Display 2x2 matrix -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <h3 class="text-dark text-center fw-semibold">2 x 2 Matrix</h3>
+        <input type="text" class="form-control mt-2" id="num10" placeholder="Enter elements without space ">
+        <button class="btn btn-primary mt-2 w-50" onclick="Check10()">Display</button>
+        <button class="btn btn-primary mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result10" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check10() {
+            var items = num10.value;
+            var arr = new Array(3);
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = [];
+            }
+
+            //loop to input 2d array elements
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    arr[i][j] = items[count++];
+                }
+            }
+            console.log(arr);
+            //display aray
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    result10.innerHTML = `${arr[0][0]},${arr[0][1]},${arr[0][2]} <br> ${arr[1][0]},${arr[1][1]},${arr[1][2]} <br> ${arr[2][0]},${arr[2][1]},${arr[2][2]}`;
+                }
+            }
+        }
+        function clrScreen() {
+            num10.value = "";
+            result10.innerHTML = "";
+        }
+    </script>
+
+    <!--37) Transpose of matrix -->
+
+    <!--38) Sum of 2 matrix -->
+
+    <!--39) Multiplication of 3x3 matrix -->
+
+    <!--40) Matrix-same or not -->
+
+</body>
+
+</html>

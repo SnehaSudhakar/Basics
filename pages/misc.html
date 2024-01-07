@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous Programs</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- css -->
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .row {
+            width: 25%;
+        }
+
+        .star {
+            cursor: pointer;
+            color: grey;
+        }
+
+        @media(width<992px) {
+            .row {
+                width: 50%;
+            }
+        }
+
+        @media(width<576px) {
+            .row {
+                width: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <!--41) Diagonal -->
+
+    <!--42) ASCII value of given letter -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark text-center">ASCII value</h3>
+
+        <input type="text" class="form-control" id="num2" placeholder="Enter a letter">
+        <button class="btn btn-warning mt-2 w-50" onclick="Check2()">Check</button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result2" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check2() {
+            const inpVal = num2.value;
+            // const asc = inpVal.charCodeAt(0); OR
+            const asc = inpVal.codePointAt(0);
+            result2.innerHTML = `ASCII value of letter ${inpVal} is ${asc}`;
+        }
+        function clrScreen() {
+            num2.value = "";
+            result2.innerHTML = "";
+        }
+    </script>
+
+    <!--43) Wind chill index -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark text-center">Wind Chill Index</h3>
+        <input type="text" class="form-control mt-2" id="num31" placeholder="Wind speed(in miles/hr)">
+        <input type="text" class="form-control mt-2" id="num32" placeholder="Air Temprature(in farenheit)">
+        <button class="btn btn-warning mt-2 w-50" onclick="Check3()">Check</button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result3" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check3() {
+            var windSpeed = num31.value;
+            var temp = num32.value;
+            var res;
+            if (windSpeed <= 4) {
+                res = temp;
+            } else if (windSpeed <= 45) {
+                res = (1.6 * temp) - 55;
+            } else {
+                res = 91.4 + (91.4 - temp) * (0.0203 * windSpeed - 0.304 * (windSpeed) * 1 / 2 - 0.474);
+            }
+            result3.innerHTML = `Windchill Index : ${res} &deg; F`;
+        }
+        function clrScreen() {
+            num31.value = "";
+            num32.value = "";
+            result3.innerHTML = "";
+        }
+    </script>
+
+    <!--44) Divisibility by 5 and 6 -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark text-center">Divisibility by 5 and 6</h3>
+
+        <input type="text" class="form-control" id="num4" placeholder="Enter a number">
+        <button class="btn btn-warning mt-2 w-50" onclick="Check4()">Check</button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result4" class="text-danger mt-2"></h4>
+    </div>
+
+    <script>
+        function Check4() {
+            var Num = parseInt(num41.value);
+            if (Num % 5 == 0) {
+                if (Num % 6 == 0) {
+                    result4.innerHTML = Num + " is divisible by 5 and 6";
+                } else {
+                    result4.innerHTML = Num + " is divisible only by 5";
+                }
+            } else {
+                if (Num % 6 == 0) {
+                    result4.innerHTML = Num + " is divisible only by 6";
+                } else {
+                    result4.innerHTML = Num + " is not divisible by 5 and 6";
+                }
+            }
+        }
+        function clrScreen() {
+            num4.value = "";
+            result4.innerHTML = "";
+        }
+    </script>
+
+    <!--45)Orders -->
+
+    <!--46)Array test score of students -->
+
+    <!--47, 48) Declare a class and instance -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark">Class and Instance</h3>
+
+        <input type="text" class="form-control mt-2" id="num71" placeholder="Enter your name">
+        <input type="text" class="form-control mt-2" id="num72" placeholder="Enter your country">
+        <button class="btn btn-warning mt-2 w-25" onclick="Check7()">Display class variables</button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result7" class="text-danger mt-2"></h5>
+        <script>
+            function Check7() {
+
+                //declaring class
+                class Person {  //class Objectname
+                    constructor(name, country) { //constructor with parameters
+                        this.name = name;    //class variables
+                        this.country = country;
+                    }
+                }
+
+                var nm = num71.value;
+                var ctry = num72.value;
+
+                //creating object/instance for the class
+                const person1 = new Person(nm, ctry);
+                result7.innerHTML += `Name : ${person1.name} , Country : ${person1.country}<br>`;
+            }
+            function clrScreen() {
+                num71.value = "";
+                num72.value = "";
+                result7.innerHTML = "";
+            }
+        </script>
+    </div>
+
+    <!--49) Left pyramid pattern  -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark ">Left pyramid pattern</h3>
+
+        <input type="text" class="form-control " id="num9" placeholder="Enter the limit">
+        <button class="btn btn-warning w-25 mt-2" onclick="Check91()">Straight</button>
+        <button class="btn btn-warning w-25 mt-2" onclick="Check92()">Upside down </button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <div class="row text-center">
+            <div class="col-2 col-6">
+                <h5 id="result91" class="text-danger mt-2"></h5>
+            </div>
+            <div class="col-2 col-6">
+                <h5 id="result92" class="text-danger mt-2"></h5>
+            </div>
+        </div>
+    </div>
+    <script>
+        //straight 
+        function Check91() {
+            var n = num9.value;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    // result91.innerHTML += "* ";
+                    console.log("*");
+                }
+                // result91.innerHTML += "<br>";
+                console.log('\n');
+            }
+        }
+        //Upside down
+        function Check92() {
+            var n = num9.value;
+            for (let i = 0; i < n; i++) {
+                for (let j = 1; j <= n - i; j++) {
+                    // result92.innerHTML += "*";
+                    console.log("*");
+                }
+                // result92.innerHTML += "<br>";
+                console.log('\n');
+            }
+        }
+        function clrScreen() {
+            num9.value = "";
+            result91.innerHTML = "";
+            result92.innerHTML = "";
+        }
+    </script>
+
+    <!--50) Right pyramid pattern -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark ">Right pyramid pattern</h3>
+
+        <input type="text" class="form-control " id="num10" placeholder="Enter the limit">
+        <button class="btn btn-warning w-25 mt-2" onclick="Check101()">Straight</button>
+        <button class="btn btn-warning w-25 mt-2" onclick="Check102()">Upside down </button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <div class="row text-center">
+            <div class="col-2 col-6">
+                <h5 id="result101" class="text-danger mt-2"></h5>
+            </div>
+            <div class="col-2 col-6">
+                <h5 id="result102" class="text-danger mt-2"></h5>
+            </div>
+        </div>
+    </div>
+    <script>
+        //straight
+        function Check101() {
+            var n = num10.value;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i; j++) {
+                    // result101.innerHTML += " ";
+                    console.log(" ");
+                }
+                for (let k = 1; k <= i; k++) {
+                    // result101.innerHTML += "*";
+                    console.log("*");
+                }
+                // result101.innerHTML += "<br>";
+                console.log('\n');
+            }
+        }
+        // Upside down
+        function Check102() {
+            var n = num10.value;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j < i; j++) {
+                    // result102.innerHTML += " ";
+                    console.log(" ");
+                }
+                for (let k = 0; k <= n - i; k++) {
+                    // result102.innerHTML += "*";
+                    console.log("*");
+                }
+                // result102.innerHTML += "<br>";
+                console.log('\n');
+            }
+        }
+        function clrScreen() {
+            num10.value = "";
+            result101.innerHTML = "";
+            result102.innerHTML = "";
+        }
+    </script>
+
+    <!--51) Pyramid star pattern  -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark ">Star pyramid </h3>
+
+        <input type="text" class="form-control " id="num11" placeholder="Enter the limit">
+        <button class="btn btn-warning w-25 mt-2" onclick="Check111()">Straight</button>
+        <button class="btn btn-warning w-25 mt-2" onclick="Check112()">Upside down </button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <div class="row text-center">
+            <div class="col-2 col-6">
+                <h5 id="result111" class="text-danger mt-2"></h5>
+            </div>
+            <div class="col-2 col-6">
+                <h5 id="result112" class="text-danger mt-2"></h5>
+            </div>
+        </div>
+    </div>
+    <script>
+        function Check111() {
+            var n = num11.value;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i; j++) {
+                    result111.innerHTML += " ";
+                }
+                for (let k = 1; k <= ((2 * i) - 1); k++) {
+                    result111.innerHTML += "* ";
+                }
+                result111.innerHTML += "<br>";
+            }
+        }
+        function Check112() {
+            var n = num11.value;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 0; j <= i - 1; j++) {
+                    result112.innerHTML += " ";
+                }
+                for (let k = 1; k <= ((2 * n) - ((2 * i) - 1)); k++) {
+                    result112.innerHTML += "* ";
+                }
+                result112.innerHTML += "<br>";
+            }
+        }
+        function clrScreen() {
+            num11.value = "";
+            result111.innerHTML = "";
+            result112.innerHTML = "";
+        }
+    </script>
+
+    <!--52) create a new array and merge these arrays with no repeating values (spread operator)  -->
+    <div
+        class="container overflow-scroll border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <h3 class="text-dark text-center">Array Merge</h3>
+        <h6 id="result171" class="text-danger  mt-2"></h6>
+        <button class="btn btn-warning mt-2 w-50" onclick="Check17()">Merging</button>
+        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
+        <h6 id="result172" class="text-danger  mt-2"></h6>
+    </div>
+    <script>
+        var arr1 = ["PHP", "JAVA", "PYTHON"];
+        var arr2 = ["PHP", "RUBY", ".NET"];
+        var arr3 = ["ANGULAR", "JAVASCRIPT", "TYPESCRIPT"];
+        var arr4 = ["ECMASCRIPT", "JAVA", "PYTHON"];
+        const arrNew = [...new Set([...arr1, ...arr2, ...arr3, ...arr4])];
+
+        result171.innerHTML = `Array 1 : ${arr1}<br>
+            Array 2 : ${arr2}<br>
+            Array 3 : ${arr3}<br>
+            Array 4 : ${arr4}<br>`;
+
+        function Check17() {
+            result172.innerHTML = `Merged array :<br> ${arrNew} `;
+        }
+        function clrScreen() {
+            result172.innerHTML = "";
+        }
+    </script>
+
+    <!-- 53) accepting star review with count (⭐⭐⭐⭐⭐5) -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 bg-warning-subtle">
+        <h3 class="text-dark text-center">Star Rating</h3>
+        <div class="row row-cols-2 border border -2 border-black rounded bg-black text-end  mx-auto p-3">
+            <h6 class="text-center text-warning w-100">Rate your Experience</h6>
+            <div class="star-box col-10">
+                <span class="star fs-1" onclick="rateStar('1')">&#9733;</span>
+                <span class="star fs-1" onclick="rateStar('2')">&#9733;</span>
+                <span class="star fs-1" onclick="rateStar('3')">&#9733;</span>
+                <span class="star fs-1" onclick="rateStar('4')">&#9733;</span>
+                <span class="star fs-1" onclick="rateStar('5')">&#9733;</span>
+            </div>
+            <div class="rating col-2 text-warning py-2 ">
+                <h3 id="result18"></h3>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let starGroup = document.getElementsByClassName("star");
+        result18.innerHTML = "";
+        function rateStar(range) {
+            for (let i = 0; i < range; i++) {
+                starGroup[i].classList.add("text-warning");
+                if (range == 1) {
+                    result18.innerHTML = "1";
+                } else if (range == 2) {
+                    result18.innerHTML = "2";
+                } else if (range == 3) {
+                    result18.innerHTML = "3";
+                } else if (range == 4) {
+                    result18.innerHTML = "4";
+                } else if (range == 5) {
+                    result18.innerHTML = "5";
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

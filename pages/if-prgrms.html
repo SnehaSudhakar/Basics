@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF-ELSE</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- css -->
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+        }
+    </style>
+
+</head>
+
+<body class="bg-black">
+    <!--8) Largest of 2 numbers ------------------------------------------------>
+    <div class="container border border-secondary shadow mt-3 p-3  text-center bg-success-subtle">
+        <h3 class="text-dark text-center">Largest of 2 numbers</h3>
+        <input type="text" class="form-control mt-2" id="num11" placeholder="Enter 1st number">
+        <input type="text" class="form-control mt-2" id="num12" placeholder="Enter 2nd number">
+        <button id="btn1" class="btn btn-success mt-2 w-50" onclick="Check1()">Check</button>
+        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result1" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check1() {
+            var Num1 = parseInt(num11.value);
+            var Num2 = parseInt(num12.value);
+
+            if (Num1 > Num2) {
+                result1.innerHTML = Num1 + " is larger than " + Num2;
+            }
+            else {
+                result1.innerHTML = Num2 + " is larger than " + Num1;
+            }
+        }
+        function clrScreen() {
+            num11.value = "";
+            num12.value = "";
+            result1.innerHTML = "";
+        }
+    </script>
+
+    <!--9) Largest of 3 numbers ----------------------------------------------------->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+        <h3 class="text-dark text-center">Largest of 3 numbers</h3>
+        <input type="text" class="form-control mt-2" id="num21" placeholder="Enter 1st number">
+        <input type="text" class="form-control mt-2" id="num22" placeholder="Enter 2nd number">
+        <input type="text" class="form-control mt-2" id="num23" placeholder="Enter 3rd number">
+        <button id="btn2" class="btn btn-success mt-2 w-50" onclick="Check2()">Check</button>
+        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result2" class="text-danger mt-2"></h4>
+    </div>
+
+    <script>
+        function Check2() {
+            var Num1 = parseInt(num21.value);
+            var Num2 = parseInt(num22.value);
+            var Num3 = parseInt(num23.value);
+            if (Num1 > Num2) {
+                if (Num1 > Num3) {
+                    result2.innerHTML = Num1 + " is greater";
+                }
+                else {
+                    result2.innerHTML = Num3 + " is greater";
+                }
+            }
+            else {
+                if (Num2 > Num3) {
+                    result2.innerHTML = Num2 + " is greater";
+                }
+                else {
+                    result2.innerHTML = Num3 + " is greater";
+                }
+            }
+        }
+        function clrScreen() {
+            num21.value = "";
+            num22.value = "";
+            num23.value = "";
+            result2.innerHTML = "";
+        }
+    </script>
+
+    <!--10) , 11), Even or Odd ------------------------------------------------------------>
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+        <h3 class="text-dark text-center">Even or Odd</h3>
+
+        <input type="text" class="form-control" id="num31" placeholder="Enter a number">
+        <button id="btn3" class="btn btn-success mt-2 w-50" onclick="Check3()">Even/Odd</button>
+        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result3" class="text-danger mt-2"></h4>
+    </div>
+
+    <script>
+        function Check3() {
+            var Num = parseInt(num31.value);
+            if (Num % 2 == 0) {
+                result3.innerHTML = Num + " is even";
+            }
+            else {
+                result3.innerHTML = Num + " is odd";
+            }
+        }
+        function clrScreen() {
+            num31.value = "";
+            result3.innerHTML = "";
+        }
+    </script>
+
+    <!--12) Number divisible by 2 and 5 -------------------------------------- -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+        <h3 class="text-dark text-center">Divisibility by 2 and 5</h3>
+
+        <input type="text" class="form-control" id="num41" placeholder="Enter a number">
+        <button id="btn4" class="btn btn-success mt-2 w-50" onclick="Check4()">Check</button>
+        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result4" class="text-danger mt-2"></h4>
+    </div>
+
+    <script>
+        function Check4() {
+            var Num = parseInt(num41.value);
+            if (Num % 2 == 0) {
+                if (Num % 5 == 0) {
+                    result4.innerHTML = Num + " is divisible by 2 and 5";
+                }
+                else {
+                    result4.innerHTML = Num + " is divisible only by 2";
+                }
+            }
+            else {
+                if (Num % 5 == 0) {
+                    result4.innerHTML = Num + " is divisible only by 5";
+                }
+                else {
+                    result4.innerHTML = Num + " is not divisible by 2 and 5";
+                }
+            }
+        }
+        function clrScreen() {
+            num41.value = "";
+            result4.innerHTML = "";
+        }
+    </script>
+
+    <!--13) Amstrong or not ------------------------------------------------->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+        <h3 class="text-dark text-center">Amstrong or not</h3>
+
+        <input type="text" class="form-control" id="num51" placeholder="Enter a number">
+        <button id="btn5" class="btn btn-success mt-2 w-50" onclick="Check5()">Check</button>
+        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result5" class="text-danger mt-2"></h4>
+    </div>
+
+    <script>
+        function Check5() {
+            var Num = parseInt(num51.value);
+            var cube = 0;
+            var temp = Num;
+            while (Num > 0) {
+                var rem = Num % 10;  //taking the last digit
+                console.log("rem: " + rem)
+                cube = cube + (rem * rem * rem);   //9+ 125+1
+                console.log("cube: " + cube)
+                Num = parseInt(Num / 10); //taking the remaining digits 
+                console.log("num: " + Num)
+            }
+            if (cube == temp) {
+                result5.innerHTML = temp + " is Amstrong";
+            }
+            else {
+                result5.innerHTML = temp + " is not Amstrong"
+            }
+        }
+        function clrScreen() {
+            num51.value = "";
+            result5.innerHTML = "";
+        }
+    </script>
+
+
+</body>
+
+</html>

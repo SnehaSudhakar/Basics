@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- css -->
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <!--14) Palindrome or not -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Palindrome Number</h3>
+
+        <input type="text" class="form-control" id="num1" placeholder="Enter a number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check1()">Check</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result1" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check1() {
+            var Num = parseInt(num1.value);
+            var original = Num;  //copy the number into temporary variable
+            var rem, rev = 0; //declare the reminder and initialize the reminder variable
+            while (Num > 0) {
+                rem = Num % 10;  //take reminder of the number
+                console.log("rem: " + rem)
+                rev = rev * 10 + rem;  //placing the reminder on 
+                console.log("reverse: " + rev)
+                Num = parseInt(Num / 10); //removing the last digit and removing the decimals
+                console.log("Num" + Num)
+            }
+            if (original == rev) {
+                result1.innerHTML = `${original} is palindrome `;
+            } else {
+                result1.innerHTML = `${original} is not palindrome `;
+            }
+        }
+        function clrScreen() {
+            num1.value = "";
+            result1.innerHTML = "";
+        }
+    </script>
+
+    <!--15) Prime or not -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Prime or not</h3>
+
+        <input type="text" class="form-control" id="num2" placeholder="Enter a number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check2()">Check</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result2" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check2() {
+            var Num = parseInt(num2.value);
+            var flag = 0;
+            for (var i = 2; i <= Num / 2; i++) {
+                if (Num % i == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                result2.innerHTML = `${Num} is prime`;
+            } else {
+                result2.innerHTML = `${Num} is not prime`;
+            }
+        }
+        function clrScreen() {
+            num2.value = "";
+            result2.innerHTML = "";
+        }
+    </script>
+
+    <!--16) Reverse of a number  -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Reverse of number</h3>
+
+        <input type="text" class="form-control" id="num3" placeholder="Enter a number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check3()">Reverse</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result3" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check3() {
+            var Num = parseInt(num3.value); //converting to integer
+            var rem, rev = 0; // initializing the reverse and reminder
+            while (Num > 0) {
+                rem = Num % 10; //
+                rev = (rev * 10) + rem;
+                Num = parseInt(Num / 10);
+            }
+            result3.innerHTML = `Reverse is ${rev}`;
+        }
+        function clrScreen() {
+            num3.value = "";
+            result3.innerHTML = "";
+        }
+    </script>
+
+    <!--17) Numbers into words -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Numbers into words</h3>
+
+        <input type="text" class="form-control" id="num4" placeholder="Enter a number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check4()">In Words</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result4" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check4() {
+            var Num = num4.value;
+            for (let i = 0; i < Num.length; i++) {
+                switch (Num[i]) {
+                    case "1":
+                        result4.innerHTML += "One" + " ";
+                        break;
+                    case "2":
+                        result4.innerHTML += "Two" + " ";
+                        break;
+                    case "3":
+                        result4.innerHTML += "Three" + " ";
+                        break;
+                    case "4":
+                        result4.innerHTML += "Four" + " ";
+                        break;
+                    case "5":
+                        result4.innerHTML += "Five" + " ";
+                        break;
+                    case "6":
+                        result4.innerHTML += "Six" + " ";
+                        break;
+                    case "7":
+                        result4.innerHTML += "Seven" + " ";
+                        break;
+                    case "8":
+                        result4.innerHTML += "Eight" + " ";
+                        break;
+                    case "9":
+                        result4.innerHTML += "Nine" + " ";
+                        break;
+                    case "0":
+                        result4.innerHTML += "Zero" + " ";
+                        break;
+                    default:
+                        result4.innerHTML = "Not a number";
+                }
+            }
+        }
+        function clrScreen() {
+            num4.value = "";
+            result4.innerHTML = "";
+        }
+    </script>
+
+
+    <!--18)  Reverse a string -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Reverse of string</h3>
+
+        <input type="text" class="form-control" id="num5" placeholder="Enter a number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check5()">Reverse</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result5" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check5() {
+            var str1 = num5.value;
+            var rev = str1.split("").reverse().join("");
+            result5.innerHTML = rev;
+        }
+        function clrScreen() {
+            num5.value = "";
+            result5.innerHTML = "";
+        }
+    </script>
+
+    <!--19) Fibonacci series -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Fibonacci Series</h3>
+
+        <input type="text" class="form-control" id="num6" placeholder="Enter the limit">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check6()">Print</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result6" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check6() {
+            var f1 = 0, f2 = 1;
+            var limit = parseInt(num6.value);
+            if (limit == "1") {
+                result6.innerHTML = f1;
+            } else if (limit == "2") {
+                result6.innerHTML = `${f1},${f2}`;
+            } else {
+                result6.innerHTML = `${f1},${f2}`;
+                for (let i = 2; i <= limit; i++) {
+                    var fnew = f1 + f2;
+                    result6.innerHTML += `,${fnew}`;
+                    f1 = f2;
+                    f2 = fnew;
+                }
+            }
+        }
+        function clrScreen() {
+            num6.value = "";
+            result6.innerHTML = "";
+        }
+    </script>
+
+    <!--20) Floyd's triangle -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Floyd's Triangle</h3>
+
+        <input type="text" class="form-control" id="num7" placeholder="Enter the number of rows">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check7()">Print</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result7" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check7() {
+            var rows = num7.value;
+            var Num = 1;
+            for (let i = 1; i <= rows; i++) {  // setting rows
+                for (let j = 1; j <= i; j++) {
+                    result7.innerHTML += `${Num} `;
+                    Num++;
+                }
+                result7.innerHTML += `<br>`;
+            }
+        }
+        function clrScreen() {
+            num7.value = "";
+            result7.innerHTML = "";
+        }
+    </script>
+
+    <!--21) Factorial of given number -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Factorial</h3>
+
+        <input type="text" class="form-control" id="num8" placeholder="Enter the number">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check8()">Factorial</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result8" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check8() {
+            var Num = parseInt(num8.value);
+            var fact = 1;
+            for (var i = 1; i <= Num; i++) {
+                fact = fact * i;
+            }
+            result8.innerHTML = `Factorial is: ${fact}`;
+        }
+        function clrScreen() {
+            num8.value = "";
+            result8.innerHTML = "";
+        }
+    </script>
+
+    <!--22) Prime upto limit -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Prime with limit</h3>
+
+        <input type="text" class="form-control" id="num9" placeholder="Enter the limit">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check9()">Prime Numbers</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result9" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check9() {
+            var limit = num9.value;
+            for (let i = 2; i <= limit; i++) { // count iteration upto limit
+                var flag = 0;
+                for (let j = 2; j <= i / 2; j++) { //number iteation from 2 to limit/2 
+                    if (i % j == 0) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    result9.innerHTML += `${i} `;
+                }
+            }
+        }
+        function clrScreen() {
+            num9.value = "";
+            result9.innerHTML = "";
+        }
+    </script>
+
+    <!--23) Multiplication Table -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Multiplication table</h3>
+
+        <input type="text" class="form-control my-2" id="num101" placeholder="Enter the number">
+        <input type="text" class="form-control my-2" id="num102" placeholder="Enter the limit">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check10()">Print</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result10" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check10() {
+            var Num = num101.value;
+            var limit = num102.value;
+            var result;
+            for (let i = 1; i <= limit; i++) {
+                result = i * Num;
+                result10.innerHTML += `${Num} * ${i} = ${result} <br>`;
+            }
+        }
+        function clrScreen() {
+            num101.value = "";
+            num102.value = "";
+            result10.innerHTML = "";
+        }
+    </script>
+
+
+    <!--24) Sum of 10 numbers -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Sum of 10 numbers</h3>
+        <button class="btn btn-danger mt-2 w-50" onclick="Check11()">Print Sum</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result11" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check11() {
+            var sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                sum = sum + i;
+            }
+            result11.innerHTML = "Sum of 10 numbers is: " + sum;
+        }
+        function clrScreen() {
+            result11.innerHTML = "";
+        }
+    </script>
+
+    <!--25) Days of week -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Day of the week</h3>
+        <input type="text" class="form-control" id="num12" placeholder="Enter the day number (1-7)">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check12()">Print</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h5 id="result12" class="text-danger mt-2"></h5>
+    </div>
+    <script>
+        function Check12() {
+            var day = num12.value;
+            switch (day) {
+                case "1":
+                    result12.innerHTML = "Sunday";
+                    break;
+                case "2":
+                    result12.innerHTML = "Monday";
+                    break;
+                case "3":
+                    result12.innerHTML = "Teusday";
+                    break;
+                case "4":
+                    result12.innerHTML = "Wednesday";
+                    break;
+                case "5":
+                    result12.innerHTML = "Thursday";
+                    break;
+                case "6":
+                    result12.innerHTML = "Friday";
+                    break;
+                case "7":
+                    result12.innerHTML = "Saturday";
+                    break;
+                default:
+                    result12.innerHTML = "Wrong Entry";
+            }
+        }
+        function clrScreen() {
+            num12.value = "";
+            result12.innerHTML = "";
+        }
+    </script>
+
+    <!--26) String is palindrome or not -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
+        <h3 class="text-dark text-center">Palindrome String</h3>
+        <input type="text" class="form-control" id="num13" placeholder="Enter the string">
+        <button class="btn btn-danger mt-2 w-50" onclick="Check13()">Check</button>
+        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
+        <h4 id="result13" class="text-danger mt-2"></h4>
+    </div>
+    <script>
+        function Check13() {
+            var str1 = num13.value;
+            var rv = str1.split('').reverse().join("");
+            if (str1 == rv) {
+                result13.innerHTML = str1 + " is palindrome";
+            } else {
+                result13.innerHTML = str1 + " is not palindrome";
+            }
+        }
+        function clrScreen() {
+            num13.value = "";
+            result13.innerHTML = "";
+        }
+    </script>
+
+
+</body>
+
+</html>
