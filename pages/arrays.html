@@ -23,6 +23,14 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        ul a {
+            color: #fff;
+        }
+
+        .active {
+            color: rgb(137, 172, 249);
+        }
+
         .container {
             width: 90%;
         }
@@ -31,7 +39,46 @@
 
 <body class="bg-black">
 
-    <div class="head text-center my-3">
+    <header class="fixed-top z-1 bg-black mb-3">
+        <!-- Navigation bar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-3  mx-md-3">
+                <!-- Logo text-->
+                <a href="../index.html" class="navbar-brand fs-2 fw-bolder text-white">Basics</a>
+                <!-- Toggle button -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navItemList" aria-controls="navItemList" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <!-- Menu icon -->
+                    <span class="navbar-toggler-icon bg-light text-black rounded fs-4"></i></span>
+                </button>
+
+                <!-- collapsible navlist -->
+                <div class="collapse navbar-collapse " id="navItemList">
+                    <ul class="navbar-nav text-center ms-md-auto ">
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="../index.html" class=" text-decoration-none fs-5">Home</a></li>
+                        <li class="nav-link position-relative list-unstyled  mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./variable-prgrms.html" class="text-decoration-none fs-5">Variables</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./if-prgrms.html" class="text-white text-decoration-none fs-5">If-Else</a></li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./loops.html" class="text-decoration-none fs-5">Loops</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./arrays.html" class="text-decoration-none fs-5 active">Arrays</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./misc.html" class="text-decoration-none fs-5">Miscellaneous</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="head text-center mt-5 pt-5">
         <h3 class="text-white ">Arrays</h3>
     </div>
 
@@ -51,7 +98,7 @@
             var arr = new Array(10); //declare array with size
             var arr = num0.value.split(" ");  // split the items and assign to each index
             console.log(arr)
-            result0.innerHTML = `Array elements: <br>`;
+            result0.innerHTML = `<strong>Array elements:</strong> <br>`;
             for (var i = 0; i < arr.length; i++) {  //fetching array items
                 result0.innerHTML += `${arr[i]} `;
             }
@@ -78,7 +125,7 @@
             var arr = new Array(10);
             arr = num1.value.split(" "); //split the elements and assign to array
             console.log(arr)
-            result1.innerHTML = `Array elements:<br> ${arr}`;
+            result1.innerHTML = `<strong>Array elements:</strong><br> ${arr}`;
         }
         function clearContent() {
             num1.value = "";
@@ -100,7 +147,7 @@
         function Check2() {
             var arr1 = num2.value.split(" ");
             let arrRev = arr1.reverse();
-            result2.innerHTML += `Reverse is : ${arrRev}`;
+            result2.innerHTML += `<strong>Reverse is :</strong> ${arrRev}`;
         }
         function clearContent() {
             num2.value = "";
@@ -125,7 +172,7 @@
             arr.forEach(element => { //iterating each element
                 sum = sum + Number(element);
             });
-            result3.innerHTML = `Sum of elements :${sum}`;
+            result3.innerHTML = `<strong>Sum of elements :</strong>${sum}`;
         }
         function clearContent() {
             num3.value = "";
@@ -181,7 +228,7 @@
             var arr = num5.value.split(" ");
 
             var out = Math.max(...arr) //math function to find largest element
-            result5.innerHTML = `Largest element : ${out}`
+            result5.innerHTML = `<strong>Largest element :</strong> ${out}`
         }
         function clearContent() {
             num5.value = "";
@@ -204,7 +251,7 @@
             var arr = num6.value.split(" ");
 
             var out = arr.sort(function (a, b) { return a - b })//compare function is used with sort to sort in ascenting order
-            result6.innerHTML = `Sorted array : ${out}`;
+            result6.innerHTML = `<strong>Sorted array :</strong> ${out}`;
         }
         function clearContent() {
             num6.value = "";
@@ -233,7 +280,7 @@
                 var pos = arr.indexOf(elm);
                 result7.innerHTML = `${elm} is found at position ${pos + 1} `;
             } else {
-                result7.innerHTML = `${elm} is not in the array `;
+                result7.innerHTML = `${elm} is not found in the array `;
             }
         }
         function clearContent() {
@@ -308,7 +355,7 @@
             var elm = num92.value;
 
             var removedItm = arr.splice(arr.indexOf(elm), 1); //splice(item to remove,number of items to remove)
-            result9.innerHTML = `Array : ${arr}`;
+            result9.innerHTML = `<strong>Array :</strong> ${arr}`;
         }
         function clearContent() {
             num91.value = "";
@@ -321,7 +368,7 @@
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
         <form action="">
             <h3 class="text-dark text-center">2 x 2 Matrix</h3>
-            <input type="text" class="form-control mt-2" id="num10" placeholder="Enter elements with space ">
+            <input type="text" class="form-control mt-2" id="num10" placeholder="Enter 4 elements with space ">
             <button type="button" class="btn btn-primary mt-2 w-50" onclick="Check10()">Display</button>
             <button type="submit" class="btn btn-primary mt-2 " onclick="clearContent()">Clear</button>
             <h5 id="result10" class="text-danger mt-2"></h5>
@@ -330,24 +377,24 @@
     <script>
         function Check10() {
             var items = num10.value.split(" ");
-            var arr = new Array(3);  //declaring array variable
+            var arr = new Array(2);  //declaring array variable
             let count = 0;
 
             //declare 2d array
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 arr[i] = [];
             }
 
             //loop to input 2d array elements
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     arr[i][j] = items[count++];
                 }
             }
 
             // display array
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     result10.innerHTML += `${arr[i][j]}&nbsp`;
                 }
                 result10.innerHTML += `<br>`;
@@ -364,58 +411,59 @@
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
         <form action="">
             <h3 class="text-dark text-center">Transpose of Matrix</h3>
-            <input type="text" class="form-control mt-2" id="num11" placeholder="Enter elements with space ">
+            <input type="text" class="form-control mt-2" id="num11" placeholder="Enter 4 elements with space ">
             <button type="button" class="btn btn-primary mt-2 w-50" onclick="Check11()">Find Transpose</button>
             <button type="submit" class="btn btn-primary mt-2 " onclick="clearContent()">Clear</button>
             <h5 id="result11" class="text-danger mt-2"></h5>
-            <!-- <h5 id="result112" class="text-danger mt-2"></h5> -->
         </form>
     </div>
     <script>
         function Check11() {
             var items = num11.value.split(" ");
-            var arr = new Array(3);  //declaring array variable
+            var arr = new Array(2);  //declaring array variable
             let count = 0;
 
             //declare 2d array
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 arr[i] = [];
             }
 
             //loop to input 2d array elements
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     arr[i][j] = items[count++];
                 }
             }
 
             //display matrix
-            result11.innerHTML = "Original matrix: <br>"
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            result11.innerHTML = "<strong>Original matrix:</strong> <br>"
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     result11.innerHTML += `${arr[i][j]}&nbsp`;
                 }
                 result11.innerHTML += `<br>`;
             }
             //transpose
-            result11.innerHTML += "<br>Transpose: <br>"
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            result11.innerHTML += "<br><strong>Transpose:</strong> <br>"
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     result11.innerHTML += `${arr[j][i]}&nbsp`;
                 }
                 result11.innerHTML += `<br>`;
             }
-        }
-        function clearContent() {
-
+            function clearContent() {
+                num11.value = "";
+                result11.innerHTML = "";
+            }
         }
     </script>
+
     <!--38) Sum of 2 matrix -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
         <form action="">
             <h3 class="text-dark text-center">Sum of 2 Matrix</h3>
-            <input type="text" class="form-control mt-2" id="num121" placeholder="Enter elements with space ">
-            <input type="text" class="form-control mt-2" id="num122" placeholder="Enter elements with space ">
+            <input type="text" class="form-control mt-2" id="num121" placeholder="Enter 4 elements with space ">
+            <input type="text" class="form-control mt-2" id="num122" placeholder="Enter 4 elements with space ">
             <button type="button" class="btn btn-primary mt-2 w-50" onclick="Check12()">Find Sum</button>
             <button type="submit" class="btn btn-primary mt-2 " onclick="clearContent()">Clear</button>
             <h5 id="result12" class="text-danger mt-2"></h5>
@@ -428,45 +476,63 @@
             let m = 0, n = 0;
 
             //declaring array variables
-            let arr1 = new Array(3);
-            let arr2 = new Array(3);
-            let arrSum = new Array(3);
+            let arr1 = new Array(2);
+            let arr2 = new Array(2);
+            let arrSum = new Array(2);
 
             //declaring 3 arrays
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 arr1[i] = new Array(3);
             }
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 arr2[i] = new Array(3);
             }
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 arrSum[i] = new Array(3);
             }
 
             //input values to arrays
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     arr1[i][j] = parseInt(item1[m++]);
                 }
             }
 
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     arr2[i][j] = parseInt(item2[n++]);
                 }
             }
 
+            //display 1st matrix
+            result12.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    result12.innerHTML += `${arr1[i][j]} &nbsp`;
+                }
+                result12.innerHTML += `<br>`;
+            }
+            //display 2nd matrix
+            result12.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    result12.innerHTML += `${arr2[i][j]} &nbsp`;
+                }
+                result12.innerHTML += `<br>`;
+            }
+
             // //finding the sum of arr1 and arr2
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     arrSum[i][j] = arr1[i][j] + arr2[i][j]
                 }
             }
             console.log(arrSum)
 
             //display the result
-            for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
+            result12.innerHTML += `<strong>Sum :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
                     result12.innerHTML += `${arrSum[i][j]} &nbsp`;
                 }
                 result12.innerHTML += `<br>`;
@@ -480,7 +546,171 @@
 
     </script>
 
+    <!--39) Multiplication of 3x3 matrix -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <form action="">
+            <h3 class="text-dark text-center">Multiplication of 3x3 Matrix</h3>
+            <input type="text" class="form-control mt-2" id="num131" placeholder="Enter 9 elements with space ">
+            <input type="text" class="form-control mt-2" id="num132" placeholder="Enter 9 elements with space ">
+            <button type="button" class="btn btn-primary mt-2 w-50" onclick="Check13()">Find Product</button>
+            <button type="submit" class="btn btn-primary mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result13" class="text-danger mt-2"></h5>
+        </form>
+    </div>
+    <script>
+        function Check13() {
+            let item1 = num131.value.split(" ");
+            let item2 = num132.value.split(" ");
+            let m = 0, n = 0;
 
+            //declaring array variables
+            let arr1 = new Array(3);
+            let arr2 = new Array(3);
+            let arrProd = new Array(3);
+
+            //declaring 3 arrays
+            for (let i = 0; i < 3; i++) {
+                arr1[i] = [];
+            }
+            for (let i = 0; i < 3; i++) {
+                arr2[i] = [];
+            }
+            for (let i = 0; i < 3; i++) {
+                arrProd[i] = [];
+            }
+
+            //input values to 1st matrix
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arr1[i][j] = parseInt(item1[m++]);
+                }
+            }
+            console.log(arr1)
+            //input values to 2nd matrix
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arr2[i][j] = parseInt(item2[n++]);
+                }
+            }
+            console.log(arr2)
+
+            //display 1st matrix
+            result13.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arr1[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+
+            //display 2nd matrix
+            result13.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arr2[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+
+            // //finding the product of arr1 and arr2
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arrProd[j][i] = arr1[i][j] * arr2[j][i];
+                }
+            }
+            console.log(arrProd)
+
+            //display the result
+            result13.innerHTML += `<strong>Product :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arrProd[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+        }
+        function clearContent() {
+            num131.value = "";
+            num132.value = "";
+            result13.innerHTML = "";
+        }
+
+    </script>
+
+    <!--40) Matrix-same or not -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-primary-subtle">
+        <form action="">
+            <h3 class="text-dark text-center">Matrix same or not</h3>
+            <input type="text" class="form-control mt-2" id="num141" placeholder="Enter 4 elements with space ">
+            <input type="text" class="form-control mt-2" id="num142" placeholder="Enter 4 elements with space ">
+            <button type="button" class="btn btn-primary mt-2 w-50" onclick="Check14()">Same / Not</button>
+            <button type="submit" class="btn btn-primary mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result14" class="text-danger mt-2"></h5>
+        </form>
+    </div>
+    <script>
+        function Check14() {
+            let item1 = num141.value.split(" ");
+            let item2 = num142.value.split(" ");
+            let m = 0, n = 0;
+
+            //declaring array variables
+            let arr1 = new Array(2);
+            let arr2 = new Array(2);
+
+            //declaring 3 arrays
+            for (let i = 0; i < 2; i++) {
+                arr1[i] = [];
+            }
+            for (let i = 0; i < 2; i++) {
+                arr2[i] = [];
+            }
+
+            //input values to arrays
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    arr1[i][j] = Number(item1[m++]);
+                }
+            }
+            console.log("arr1: " + arr1)
+
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    arr2[i][j] = Number(item2[n++]);
+                }
+            }
+            console.log("arr2: " + arr2)
+
+            // //finding if arr1 = arr2
+            let status = true;
+            if (arr1.length === arr2.length) {
+                for (let i = 0; i < 2; i++) {
+                    for (let j = 0; j < 2; j++) {
+                        if (arr1[i][j] === arr2[i][j]) {
+                            status = true;
+                        } else {
+                            status = false;
+                        }
+                    }
+                }
+            } else {
+                status = false;
+            }
+
+            if (status) {
+                result14.innerHTML = "Both matrices are equal";
+            } else {
+                result14.innerHTML = "Both matrices are not equal";
+            }
+
+        }
+        function clearContent() {
+            num141.value = "";
+            num142.value = "";
+            result14.innerHTML = "";
+        }
+
+    </script>
 
 </body>
 

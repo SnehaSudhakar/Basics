@@ -21,6 +21,14 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        ul a {
+            color: #fff;
+        }
+
+        .active {
+            color: rgb(160, 229, 160);
+        }
+
         .container {
             width: 90%;
         }
@@ -30,7 +38,47 @@
 
 <body class="bg-black">
 
-    <div class="head text-center my-3">
+    <header class="fixed-top z-1 bg-black mb-3">
+        <!-- Navigation bar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-3  mx-md-3">
+                <!-- Logo text-->
+                <a href="../index.html" class="navbar-brand fs-2 fw-bolder text-white">Basics</a>
+                <!-- Toggle button -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navItemList" aria-controls="navItemList" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <!-- Menu icon -->
+                    <span class="navbar-toggler-icon bg-light text-black rounded fs-4"></i></span>
+                </button>
+
+                <!-- collapsible navlist -->
+                <div class="collapse navbar-collapse " id="navItemList">
+                    <ul class="navbar-nav text-center ms-md-auto ">
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="../index.html" class="text-decoration-none fs-5 ">Home</a></li>
+                        <li class="nav-link position-relative list-unstyled  mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./variable-prgrms.html" class="text-white text-decoration-none fs-5">Variables</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./if-prgrms.html" class="text-decoration-none fs-5 active">If-Else</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./loops.html" class="text-decoration-none fs-5">Loops</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./arrays.html" class=" text-decoration-none fs-5">Arrays</a>
+                        </li>
+                        <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
+                                href="./misc.html" class=" text-decoration-none fs-5">Miscellaneous</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="head text-center mt-5 pt-5">
         <h3 class="text-white ">If Statements </h3>
     </div>
 
@@ -47,8 +95,8 @@
     </div>
     <script>
         function Check1() {
-            var Num1 = parseInt(num11.value);
-            var Num2 = parseInt(num12.value);
+            var Num1 = Number(num11.value);
+            var Num2 = Number(num12.value);
 
             if (Num1 > Num2) {
                 result1.innerHTML = Num1 + " is larger than " + Num2;
@@ -79,9 +127,9 @@
 
     <script>
         function Check2() {
-            var Num1 = parseInt(num21.value);
-            var Num2 = parseInt(num22.value);
-            var Num3 = parseInt(num23.value);
+            var Num1 = Number(num21.value);
+            var Num2 = Number(num22.value);
+            var Num3 = Number(num23.value);
             if (Num1 > Num2) {
                 if (Num1 > Num3) {
                     result2.innerHTML = Num1 + " is greater";
