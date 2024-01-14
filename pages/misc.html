@@ -21,7 +21,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .row {
+        .stars {
             width: 25%;
         }
 
@@ -46,16 +46,73 @@
 
 <body class="bg-black">
 
+    <div class="head text-center my-3">
+        <h3 class="text-white ">Miscellaneous</h3>
+    </div>
+
     <!--41) Diagonal -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <form action="">
+            <h3 class="text-dark text-center">Matrix element replace</h3>
+            <input type="text" class="form-control mt-2" id="num1" placeholder="Enter elements with space ">
+            <button type="button" class="btn btn-warning mt-2 w-50" onclick="Check1()">Replace element</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result1" class="text-danger mt-2"></h5>
+        </form>
+    </div>
+    <script>
+        function Check1() {
+            var items = num1.value.split(" ");
+            var arr = new Array(3);  //declaring array variable
+            let count = 0;
+
+            //declare 2d array
+            for (let i = 0; i < 3; i++) {
+                arr[i] = [];
+            }
+
+            //loop to input 2d array elements
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arr[i][j] = items[count++];
+                }
+            }
+
+            //display array
+            result1.innerHTML = "Original matrix: <br>"
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result1.innerHTML += `${arr[i][j]}&nbsp`;
+                }
+                result1.innerHTML += `<br>`;
+            }
+
+            if (arr[0][0] < arr[2][2]) {
+                arr[2][2] = 1;
+            } else if (arr[0][0] > arr[2][2]) {
+                arr[0][0] = 0;
+            }
+
+            //display result
+            result1.innerHTML += "<br>Result: <br>"
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result1.innerHTML += `${arr[i][j]}&nbsp`;
+                }
+                result1.innerHTML += `<br>`;
+            }
+        }
+    </script>
 
     <!--42) ASCII value of given letter -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark text-center">ASCII value</h3>
-
-        <input type="text" class="form-control" id="num2" placeholder="Enter a letter">
-        <button class="btn btn-warning mt-2 w-50" onclick="Check2()">Check</button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result2" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">ASCII value</h3>
+            <input type="text" class="form-control" id="num2" placeholder="Enter a letter">
+            <button type="button" class="btn btn-warning mt-2 w-50" onclick="Check2()">Check</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result2" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check2() {
@@ -64,7 +121,7 @@
             const asc = inpVal.codePointAt(0);
             result2.innerHTML = `ASCII value of letter ${inpVal} is ${asc}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num2.value = "";
             result2.innerHTML = "";
         }
@@ -72,12 +129,14 @@
 
     <!--43) Wind chill index -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark text-center">Wind Chill Index</h3>
-        <input type="text" class="form-control mt-2" id="num31" placeholder="Wind speed(in miles/hr)">
-        <input type="text" class="form-control mt-2" id="num32" placeholder="Air Temprature(in farenheit)">
-        <button class="btn btn-warning mt-2 w-50" onclick="Check3()">Check</button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result3" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Wind Chill Index</h3>
+            <input type="text" class="form-control mt-2" id="num31" placeholder="Wind speed(in miles/hr)">
+            <input type="text" class="form-control mt-2" id="num32" placeholder="Air Temprature(in farenheit)">
+            <button type="button" class="btn btn-warning mt-2 w-50" onclick="Check3()">Check</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result3" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check3() {
@@ -93,7 +152,7 @@
             }
             result3.innerHTML = `Windchill Index : ${res} &deg; F`;
         }
-        function clrScreen() {
+        function clearContent() {
             num31.value = "";
             num32.value = "";
             result3.innerHTML = "";
@@ -102,17 +161,18 @@
 
     <!--44) Divisibility by 5 and 6 -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark text-center">Divisibility by 5 and 6</h3>
-
-        <input type="text" class="form-control" id="num4" placeholder="Enter a number">
-        <button class="btn btn-warning mt-2 w-50" onclick="Check4()">Check</button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result4" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Divisibility by 5 and 6</h3>
+            <input type="text" class="form-control" id="num4" placeholder="Enter a number">
+            <button type="button" class="btn btn-warning mt-2 w-50" onclick="Check4()">Check</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result4" class="text-danger mt-2"></h4>
+        </form>
     </div>
 
     <script>
         function Check4() {
-            var Num = parseInt(num41.value);
+            var Num = parseInt(num4.value);
             if (Num % 5 == 0) {
                 if (Num % 6 == 0) {
                     result4.innerHTML = Num + " is divisible by 5 and 6";
@@ -127,94 +187,231 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num4.value = "";
             result4.innerHTML = "";
         }
     </script>
 
     <!--45)Orders -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <form action="">
+            <h3 class="text-dark">Food Order</h3>
+
+            <select class="p-2 rounded w-50" id="items" onchange="chooseFood()">
+                <option value="" disabled selected>Choose an item</option>
+                <option value="Tuna Salad">Tuna Salad ($ 4.50)</option>
+                <option value="Chiken Biriyani">Chicken Biriyani ($ 8.32)</option>
+                <option value="Pizza">Pizza ($ 9.14)</option>
+            </select>
+
+            <h5 id="result51" class="text-dark mt-2 "></h5>
+            <div class="mt-2 ">
+                <label for="">Overnight Delivery : </label>
+                <input type="radio" value="YES" id="ysbtn" name="choice" class="btn-check">
+                <label for="ysbtn" class="btn btn-outline-dark">YES</label>
+                <input type="radio" value="NO" id="nobtn" name="choice" class="btn-check">
+                <label for="nobtn" class="btn btn-outline-dark">NO</label>
+            </div>
+            <button type="button" class="btn btn-warning mt-2 w-25" onclick="Check5()">Invoice</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h6 id="result52" class="text-danger fw-semibold mt-2"></h6>
+        </form>
+    </div>
+    <script>
+        function chooseFood() {
+            var Food = items.value;
+            if (Food == "Tuna Salad") { result51.innerHTML = "4.50"; }
+            else if (Food == "Chiken Biriyani") { result51.innerHTML = "8.32"; }
+            else if (Food == "Pizza") { result51.innerHTML = "9.14"; }
+        }
+        function Check5() {
+
+            var Food = items.value;
+            var total = 0;
+            let itemPrice = parseFloat(result51.innerHTML);
+            var Dchoice = document.querySelector("input[type='radio']:checked");
+
+            if (Dchoice.value == "YES") {
+                if (itemPrice < 10) {
+                    //total= 0 + itemPrice + shipping-charge + overnight delivery charge
+                    total = total + itemPrice + 2 + 5;
+                    result52.innerHTML = `My Java Cafe Invoice:<br><br>
+                                        ${Food} &nbsp : &nbsp $${itemPrice} <br>
+                                        Shipping &nbsp : &nbsp $2.00 <br>
+                                        Overnight delivery  &nbsp:&nbsp $5<br>
+                                        Total &nbsp : &nbsp $${total}`;
+                } else {
+                    total = total + itemPrice + 3 + 5;
+                    result52.innerHTML = `My Java Cafe Invoice:<br><br>
+                                        ${Food} &nbsp : &nbsp $${itemPrice} <br>
+                                        Shipping &nbsp : &nbsp $3.00 <br>
+                                        Overnight delivery &nbsp:&nbsp $5<br>
+                                        Total &nbsp : &nbsp $${total}`;
+                }
+            } else {
+                if (itemPrice < 10) {
+                    //total=  0 + itemPrice + shipping-charge 
+                    total = total + itemPrice + 2;
+                    result52.innerHTML = `My Java Cafe Invoice:<br><br>
+                                        ${Food} &nbsp : &nbsp $${itemPrice} <br>
+                                        Shipping &nbsp : &nbsp $2.00 <br>
+                                        Total &nbsp : &nbsp $${total}`;
+                } else {
+                    total = total + itemPrice + 3;
+                    result52.innerHTML = `My Java Cafe Invoice:<br><br>
+                                        ${Food} &nbsp : &nbsp $${itemPrice} <br>
+                                        Shipping &nbsp : &nbsp $3.00 <br>
+                                        Total &nbsp : &nbsp $${total}`;
+                }
+            }
+        }
+        function clearContent() {
+            items.value = "";
+            result51.innerHTML = "";
+            result52.innerHTML = "";
+        }
+    </script>
 
     <!--46)Array test score of students -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
+        <form action="">
+            <h3 class="text-dark">Test Score</h3>
+            <input type="text" class="form-control mt-2" id="num61" placeholder="Enter student names">
+            <input type="text" class="form-control mt-2" id="num62" placeholder="Enter test score(with space between)">
+            <button type="button" class="btn btn-warning mt-2 w-25" onclick="Check6()">Result</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h6 id="result5" class="text-danger mt-2"></h6>
+            <h6 id="result6" class="text-danger mt-2"></h6>
+        </form>
+    </div>
+    <script>
+        function Check6() {
+
+            var studArr = new Array(50);
+            studArr = num61.value.split(" ");
+
+            var scoreArr = new Array(50);
+            scoreArr = num62.value.split(" ");
+
+            if (studArr.length != scoreArr.length) {
+                result6.innerHTML = `Student count doesnt match with Score count`;
+            } else {
+                let sum = 0;
+                scoreArr.forEach(element => { //taking the sum
+                    sum = sum + parseInt(element);
+                });
+                let avg = sum / studArr.length; //finding average
+
+                // highest test score
+                var highestScore = Math.max(...scoreArr);
+
+                for (let i = 0; i < studArr.length; i++) {
+                    if (parseInt(scoreArr[i]) == highestScore) {
+                        result5.innerHTML = `<span class="text-success"><strong>Highest test score :<br>
+                                            Name:</strong> ${studArr[i]} &nbsp&nbsp <strong> Marks:</strong> ${scoreArr[i]}</span> <br><br>
+                                            <span class="text-black"><strong> Students with very good scores : <br>
+                                            Name &nbsp&nbsp Marks</span></strong><br>`;
+                    } else if (parseInt(scoreArr[i]) >= avg) {   //studens whose score above average
+                        result6.innerHTML += `<span class="text-black">${studArr[i]} &nbsp&nbsp ${scoreArr[i]}</span><br>`;
+                    } else if (parseInt(scoreArr[i]) < avg) {  //studens whose score is below average
+                        result6.innerHTML += `${studArr[i]} `;
+                    }
+                }
+                result6.innerHTML += `&nbsp<strong>: Need improvement</strong>`;
+            }
+        }
+        function clearContent() {
+            num61.value = "";
+            num62.value = "";
+            result5.innerHTML = "";
+            result6.innerHTML = "";
+        }
+    </script>
 
     <!--47, 48) Declare a class and instance -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark">Class and Instance</h3>
-
-        <input type="text" class="form-control mt-2" id="num71" placeholder="Enter your name">
-        <input type="text" class="form-control mt-2" id="num72" placeholder="Enter your country">
-        <button class="btn btn-warning mt-2 w-25" onclick="Check7()">Display class variables</button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <h5 id="result7" class="text-danger mt-2"></h5>
-        <script>
-            function Check7() {
-
-                //declaring class
-                class Person {  //class Objectname
-                    constructor(name, country) { //constructor with parameters
-                        this.name = name;    //class variables
-                        this.country = country;
-                    }
-                }
-
-                var nm = num71.value;
-                var ctry = num72.value;
-
-                //creating object/instance for the class
-                const person1 = new Person(nm, ctry);
-                result7.innerHTML += `Name : ${person1.name} , Country : ${person1.country}<br>`;
-            }
-            function clrScreen() {
-                num71.value = "";
-                num72.value = "";
-                result7.innerHTML = "";
-            }
-        </script>
+        <form action="">
+            <h3 class="text-dark">Class and Instance</h3>
+            <input type="text" class="form-control mt-2" id="num71" placeholder="Enter your name">
+            <input type="text" class="form-control mt-2" id="num72" placeholder="Enter your country">
+            <button type="button" class="btn btn-warning mt-2 w-25" onclick="Check7()">Display class variables</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result71" class="text-danger mt-2"></h5>
+        </form>
     </div>
+    <script>
+        function Check7() {
+            //declaring class
+            class Person {  //class Objectname
+                constructor(name, country) { //constructor with parameters
+                    this.name = name;    //class variables
+                    this.country = country;
+                }
+            }
+
+            var nm = num71.value;
+            var ctry = num72.value;
+
+            //creating object/instance for the class
+            const person1 = new Person(nm, ctry);
+            result71.innerHTML += `Name : ${person1.name} &nbsp Country : ${person1.country}<br>`;
+        }
+        function clearContent() {
+            num71.value = "";
+            num72.value = "";
+            result71.innerHTML = "";
+        }
+    </script>
 
     <!--49) Left pyramid pattern  -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark ">Left pyramid pattern</h3>
-
-        <input type="text" class="form-control " id="num9" placeholder="Enter the limit">
-        <button class="btn btn-warning w-25 mt-2" onclick="Check91()">Straight</button>
-        <button class="btn btn-warning w-25 mt-2" onclick="Check92()">Upside down </button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <div class="row text-center">
-            <div class="col-2 col-6">
-                <h5 id="result91" class="text-danger mt-2"></h5>
+        <form action="">
+            <h3 class="text-dark ">Left pyramid pattern</h3>
+            <input type="text" class="form-control " id="num9" placeholder="Enter the limit">
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check91()">Straight </button>
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check92()">Upside down </button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <div class="row text-center">
+                <div class="col-2 col-6">
+                    <h5 id="result91" class="text-danger mt-2"></h5>
+                </div>
+                <div class="col-2 col-6">
+                    <h5 id="result92" class="text-danger mt-2"></h5>
+                </div>
             </div>
-            <div class="col-2 col-6">
-                <h5 id="result92" class="text-danger mt-2"></h5>
-            </div>
-        </div>
+        </form>
     </div>
     <script>
         //straight 
         function Check91() {
             var n = num9.value;
+            let str = "* ";
             for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= i; j++) {
-                    // result91.innerHTML += "* ";
-                    console.log("*");
-                }
-                // result91.innerHTML += "<br>";
-                console.log('\n');
+                console.log(str.repeat(i));
             }
+            // for (let i = 1; i <= n; i++) {
+            //     for (let j = 1; j <= i; j++) {
+            //         result91.innerHTML += "*";
+            //     }
+            //     result91.innerHTML += "<br>";
+            // }
         }
         //Upside down
         function Check92() {
             var n = num9.value;
-            for (let i = 0; i < n; i++) {
-                for (let j = 1; j <= n - i; j++) {
-                    // result92.innerHTML += "*";
-                    console.log("*");
-                }
-                // result92.innerHTML += "<br>";
-                console.log('\n');
+            let str = "* ";
+            for (let i = n; i >= 1; i--) {
+                console.log(str.repeat(i));
             }
+            // for (let i = 0; i < n; i++) {
+            //     for (let j = 1; j <= n - i; j++) {
+            //         result92.innerHTML += "*";
+            //     }
+            //     result92.innerHTML += "<br>";
+            // }
         }
-        function clrScreen() {
+        function clearContent() {
             num9.value = "";
             result91.innerHTML = "";
             result92.innerHTML = "";
@@ -223,55 +420,60 @@
 
     <!--50) Right pyramid pattern -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark ">Right pyramid pattern</h3>
-
-        <input type="text" class="form-control " id="num10" placeholder="Enter the limit">
-        <button class="btn btn-warning w-25 mt-2" onclick="Check101()">Straight</button>
-        <button class="btn btn-warning w-25 mt-2" onclick="Check102()">Upside down </button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <div class="row text-center">
-            <div class="col-2 col-6">
-                <h5 id="result101" class="text-danger mt-2"></h5>
+        <form action="">
+            <h3 class="text-dark ">Right pyramid pattern</h3>
+            <input type="text" class="form-control " id="num10" placeholder="Enter the limit">
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check101()">Straight</button>
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check102()">Upside down </button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <div class="row text-center">
+                <div class="col-2 col-6">
+                    <h5 id="result101" class="text-danger mt-2"></h5>
+                </div>
+                <div class="col-2 col-6">
+                    <h5 id="result102" class="text-danger mt-2"></h5>
+                </div>
             </div>
-            <div class="col-2 col-6">
-                <h5 id="result102" class="text-danger mt-2"></h5>
-            </div>
-        </div>
+        </form>
     </div>
     <script>
         //straight
         function Check101() {
             var n = num10.value;
+            let str = "*";
+            let space = " ";
             for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= n - i; j++) {
-                    // result101.innerHTML += " ";
-                    console.log(" ");
-                }
-                for (let k = 1; k <= i; k++) {
-                    // result101.innerHTML += "*";
-                    console.log("*");
-                }
-                // result101.innerHTML += "<br>";
-                console.log('\n');
+                console.log(space.repeat((n - i)) + str.repeat(i));
             }
+            // for (let i = 1; i <= n; i++) {
+            //     for (let j = 1; j <= n - i; j++) {
+            //         result101.innerHTML += ``;
+            //     }
+            //     for (let k = 1; k <= i; k++) {
+            //         result101.innerHTML += `&nbsp *`;
+            //     }
+            //     result101.innerHTML += `<br>`;
+            // }
         }
         // Upside down
         function Check102() {
             var n = num10.value;
-            for (let i = 1; i <= n; i++) {
-                for (let j = 1; j < i; j++) {
-                    // result102.innerHTML += " ";
-                    console.log(" ");
-                }
-                for (let k = 0; k <= n - i; k++) {
-                    // result102.innerHTML += "*";
-                    console.log("*");
-                }
-                // result102.innerHTML += "<br>";
-                console.log('\n');
+            let str = "*";
+            let space = " ";
+            for (let i = n; i >= 1; i--) {
+                console.log(space.repeat(n - i) + str.repeat(i));
             }
+            // for (let i = 1; i <= n; i++) {
+            //     for (let j = 1; j < i; j++) {
+            //         result102.innerHTML += ``;
+            //     }
+            //     for (let k = 0; k <= n - i; k++) {
+            //         result102.innerHTML += `&nbsp *`;
+            //     }
+            //     result102.innerHTML += `<br>`;
+            // }
         }
-        function clrScreen() {
+        function clearContent() {
             num10.value = "";
             result101.innerHTML = "";
             result102.innerHTML = "";
@@ -280,47 +482,58 @@
 
     <!--51) Pyramid star pattern  -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark ">Star pyramid </h3>
-
-        <input type="text" class="form-control " id="num11" placeholder="Enter the limit">
-        <button class="btn btn-warning w-25 mt-2" onclick="Check111()">Straight</button>
-        <button class="btn btn-warning w-25 mt-2" onclick="Check112()">Upside down </button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <div class="row text-center">
-            <div class="col-2 col-6">
-                <h5 id="result111" class="text-danger mt-2"></h5>
+        <form action="">
+            <h3 class="text-dark ">Star pyramid </h3>
+            <input type="text" class="form-control " id="num11" placeholder="Enter the limit">
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check111()">Straight</button>
+            <button type="button" class="btn btn-warning w-25 mt-2" onclick="Check112()">Upside down </button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <div class="row text-center">
+                <div class="col-2 col-6">
+                    <h5 id="result111" class="text-danger mt-2"></h5>
+                </div>
+                <div class="col-2 col-6">
+                    <h5 id="result112" class="text-danger mt-2"></h5>
+                </div>
             </div>
-            <div class="col-2 col-6">
-                <h5 id="result112" class="text-danger mt-2"></h5>
-            </div>
-        </div>
+        </form>
     </div>
     <script>
         function Check111() {
             var n = num11.value;
             for (let i = 1; i <= n; i++) {
                 for (let j = 1; j <= n - i; j++) {
-                    result111.innerHTML += " ";
+                    result111.innerHTML += ``;
                 }
                 for (let k = 1; k <= ((2 * i) - 1); k++) {
-                    result111.innerHTML += "* ";
+                    result111.innerHTML += `* &nbsp`;
                 }
-                result111.innerHTML += "<br>";
+                result111.innerHTML += `<br>`;
             }
+            // let str = "*";
+            // let space = " ";
+            // for (let i = 1; i <= n; i++) {
+            //     console.log(space.repeat((n - i)) + str.repeat(i * 2 - 1));
+            // }
         }
         function Check112() {
             var n = num11.value;
             for (let i = 1; i <= n; i++) {
                 for (let j = 0; j <= i - 1; j++) {
-                    result112.innerHTML += " ";
+                    result112.innerHTML += ``;
                 }
                 for (let k = 1; k <= ((2 * n) - ((2 * i) - 1)); k++) {
-                    result112.innerHTML += "* ";
+                    result112.innerHTML += `* &nbsp`;
                 }
-                result112.innerHTML += "<br>";
+                result112.innerHTML += `<br>`;
             }
+            // let str = "*";
+            // let space = " ";
+            // for (let i = n; i >= 1; i--) {
+            //     console.log(space.repeat((n - i)) + str.repeat(i * 2 - 1))
+            // }
         }
-        function clrScreen() {
+        function clearContent() {
             num11.value = "";
             result111.innerHTML = "";
             result112.innerHTML = "";
@@ -330,17 +543,19 @@
     <!--52) create a new array and merge these arrays with no repeating values (spread operator)  -->
     <div
         class="container overflow-scroll border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-warning-subtle">
-        <h3 class="text-dark text-center">Array Merge</h3>
-        <h6 id="result171" class="text-danger  mt-2"></h6>
-        <button class="btn btn-warning mt-2 w-50" onclick="Check17()">Merging</button>
-        <button class="btn btn-warning mt-2 " onclick="clrScreen()">Clear</button>
-        <h6 id="result172" class="text-danger  mt-2"></h6>
+        <form action="">
+            <h3 class="text-dark text-center">Array Merge</h3>
+            <h6 id="result171" class="text-black  mt-2"></h6>
+            <button type="button" class="btn btn-warning mt-2 w-50" onclick="Check17()">Merging</button>
+            <button type="submit" class="btn btn-warning mt-2 " onclick="clearContent()">Clear</button>
+            <h6 id="result172" class="text-danger  mt-2"></h6>
+        </form>
     </div>
     <script>
-        var arr1 = ["PHP", "JAVA", "PYTHON"];
-        var arr2 = ["PHP", "RUBY", ".NET"];
-        var arr3 = ["ANGULAR", "JAVASCRIPT", "TYPESCRIPT"];
-        var arr4 = ["ECMASCRIPT", "JAVA", "PYTHON"];
+        var arr1 = [" PHP ", " JAVA ", " PYTHON "];
+        var arr2 = [" PHP ", " RUBY ", " .NET "];
+        var arr3 = [" ANGULAR ", " JAVASCRIPT ", " TYPESCRIPT "];
+        var arr4 = [" ECMASCRIPT ", " JAVA ", " PYTHON "];
         const arrNew = [...new Set([...arr1, ...arr2, ...arr3, ...arr4])];
 
         result171.innerHTML = `Array 1 : ${arr1}<br>
@@ -351,36 +566,45 @@
         function Check17() {
             result172.innerHTML = `Merged array :<br> ${arrNew} `;
         }
-        function clrScreen() {
+        function clearContent() {
             result172.innerHTML = "";
         }
     </script>
 
     <!-- 53) accepting star review with count (⭐⭐⭐⭐⭐5) -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 bg-warning-subtle">
-        <h3 class="text-dark text-center">Star Rating</h3>
-        <div class="row row-cols-2 border border -2 border-black rounded bg-black text-end  mx-auto p-3">
-            <h6 class="text-center text-warning w-100">Rate your Experience</h6>
-            <div class="star-box col-10">
-                <span class="star fs-1" onclick="rateStar('1')">&#9733;</span>
-                <span class="star fs-1" onclick="rateStar('2')">&#9733;</span>
-                <span class="star fs-1" onclick="rateStar('3')">&#9733;</span>
-                <span class="star fs-1" onclick="rateStar('4')">&#9733;</span>
-                <span class="star fs-1" onclick="rateStar('5')">&#9733;</span>
+        <form action="">
+            <h3 class="text-dark text-center">Star Rating</h3>
+            <div class="row stars row-cols-2 border border -2 border-black rounded bg-black text-end  mx-auto p-3">
+                <h6 class="text-center text-warning w-100">Rate your Experience</h6>
+                <div class="star-box col-10">
+                    <span class="star fs-1" onclick="rateStar('1')">&#9733;</span>
+                    <span class="star fs-1" onclick="rateStar('2')">&#9733;</span>
+                    <span class="star fs-1" onclick="rateStar('3')">&#9733;</span>
+                    <span class="star fs-1" onclick="rateStar('4')">&#9733;</span>
+                    <span class="star fs-1" onclick="rateStar('5')">&#9733;</span>
+                </div>
+                <div class="rating col-2 text-warning py-2 ">
+                    <h3 id="result18"></h3>
+                </div>
             </div>
-            <div class="rating col-2 text-warning py-2 ">
-                <h3 id="result18"></h3>
-            </div>
-        </div>
-
+        </form>
     </div>
 
     <script>
         let starGroup = document.getElementsByClassName("star");
         result18.innerHTML = "";
         function rateStar(range) {
-            for (let i = 0; i < range; i++) {
-                starGroup[i].classList.add("text-warning");
+            for (let i = 0; i < starGroup.length; i++) {
+
+                //adding style to star
+                if (i < range) {
+                    starGroup[i].classList.add("text-warning");
+                } else {
+                    starGroup[i].classList.remove("text-warning");
+                }
+
+                //display ratings
                 if (range == 1) {
                     result18.innerHTML = "1";
                 } else if (range == 2) {
@@ -394,8 +618,6 @@
                 }
             }
         }
-
-
     </script>
 
 </body>

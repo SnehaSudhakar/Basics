@@ -29,14 +29,21 @@
 </head>
 
 <body class="bg-black">
+
+    <div class="head text-center my-3">
+        <h3 class="text-white ">If Statements </h3>
+    </div>
+
     <!--8) Largest of 2 numbers ------------------------------------------------>
-    <div class="container border border-secondary shadow mt-3 p-3  text-center bg-success-subtle">
-        <h3 class="text-dark text-center">Largest of 2 numbers</h3>
-        <input type="text" class="form-control mt-2" id="num11" placeholder="Enter 1st number">
-        <input type="text" class="form-control mt-2" id="num12" placeholder="Enter 2nd number">
-        <button id="btn1" class="btn btn-success mt-2 w-50" onclick="Check1()">Check</button>
-        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result1" class="text-danger mt-2"></h4>
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+        <form action="">
+            <h3 class="text-dark text-center">Largest of 2 numbers</h3>
+            <input type="text" class="form-control mt-2" id="num11" placeholder="Enter 1st number">
+            <input type="text" class="form-control mt-2" id="num12" placeholder="Enter 2nd number">
+            <button type="button" class="btn btn-success mt-2 w-50" onclick="Check1()">Check</button>
+            <button type="submit" class="btn btn-success mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result1" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check1() {
@@ -50,7 +57,7 @@
                 result1.innerHTML = Num2 + " is larger than " + Num1;
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num11.value = "";
             num12.value = "";
             result1.innerHTML = "";
@@ -59,13 +66,15 @@
 
     <!--9) Largest of 3 numbers ----------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
-        <h3 class="text-dark text-center">Largest of 3 numbers</h3>
-        <input type="text" class="form-control mt-2" id="num21" placeholder="Enter 1st number">
-        <input type="text" class="form-control mt-2" id="num22" placeholder="Enter 2nd number">
-        <input type="text" class="form-control mt-2" id="num23" placeholder="Enter 3rd number">
-        <button id="btn2" class="btn btn-success mt-2 w-50" onclick="Check2()">Check</button>
-        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result2" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Largest of 3 numbers</h3>
+            <input type="text" class="form-control mt-2" id="num21" placeholder="Enter 1st number">
+            <input type="text" class="form-control mt-2" id="num22" placeholder="Enter 2nd number">
+            <input type="text" class="form-control mt-2" id="num23" placeholder="Enter 3rd number">
+            <button type="button" class="btn btn-success mt-2 w-50" onclick="Check2()">Check</button>
+            <button type="submit" class="btn btn-success mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result2" class="text-danger mt-2"></h4>
+        </form>
     </div>
 
     <script>
@@ -90,7 +99,7 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num21.value = "";
             num22.value = "";
             num23.value = "";
@@ -100,12 +109,13 @@
 
     <!--10) , 11), Even or Odd ------------------------------------------------------------>
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
-        <h3 class="text-dark text-center">Even or Odd</h3>
-
-        <input type="text" class="form-control" id="num31" placeholder="Enter a number">
-        <button id="btn3" class="btn btn-success mt-2 w-50" onclick="Check3()">Even/Odd</button>
-        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result3" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Even or Odd</h3>
+            <input type="text" class="form-control" id="num31" placeholder="Enter a number">
+            <button type="button" class="btn btn-success mt-2 w-50" onclick="Check3()">Even/Odd</button>
+            <button type="submit" class="btn btn-success mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result3" class="text-danger mt-2"></h4>
+        </form>
     </div>
 
     <script>
@@ -118,7 +128,7 @@
                 result3.innerHTML = Num + " is odd";
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num31.value = "";
             result3.innerHTML = "";
         }
@@ -126,12 +136,13 @@
 
     <!--12) Number divisible by 2 and 5 -------------------------------------- -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
-        <h3 class="text-dark text-center">Divisibility by 2 and 5</h3>
-
-        <input type="text" class="form-control" id="num41" placeholder="Enter a number">
-        <button id="btn4" class="btn btn-success mt-2 w-50" onclick="Check4()">Check</button>
-        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result4" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Divisibility by 2 and 5</h3>
+            <input type="text" class="form-control" id="num41" placeholder="Enter a number">
+            <button type="button" class="btn btn-success mt-2 w-50" onclick="Check4()">Check</button>
+            <button type="submit" class="btn btn-success mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result4" class="text-danger mt-2"></h4>
+        </form>
     </div>
 
     <script>
@@ -154,7 +165,7 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num41.value = "";
             result4.innerHTML = "";
         }
@@ -162,12 +173,13 @@
 
     <!--13) Amstrong or not ------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
-        <h3 class="text-dark text-center">Amstrong or not</h3>
-
-        <input type="text" class="form-control" id="num51" placeholder="Enter a number">
-        <button id="btn5" class="btn btn-success mt-2 w-50" onclick="Check5()">Check</button>
-        <button class="btn btn-success mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result5" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Amstrong or not</h3>
+            <input type="text" class="form-control" id="num51" placeholder="Enter a number">
+            <button type="button" id="btn5" class="btn btn-success mt-2 w-50" onclick="Check5()">Check</button>
+            <button type="submit" class="btn btn-success mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result5" class="text-danger mt-2"></h4>
+        </form>
     </div>
 
     <script>
@@ -190,7 +202,7 @@
                 result5.innerHTML = temp + " is not Amstrong"
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num51.value = "";
             result5.innerHTML = "";
         }

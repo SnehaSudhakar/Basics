@@ -28,12 +28,18 @@
 </head>
 
 <body class="bg-black">
+
+    <div class="head text-center my-3">
+        <h3 class="text-white ">Variable Declaration</h3>
+    </div>
     <!--1) integer,character,float,double,boolean ---------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Datatype</h3>
-        <button class="btn btn-info mt-2 w-50" onclick="Check1()">Display </button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h5 id="result1" class="text-danger mt-2"></h5>
+        <form action="">
+            <h3 class="text-dark text-center">Datatype</h3>
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check1()">Display </button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result1" class="text-danger mt-2"></h5>
+        </form>
     </div>
     <script>
         function Check1() {
@@ -44,46 +50,49 @@
             let isTrue = true;
             result1.innerHTML = myInteger + " : integer <br>" + myChar + " : character <br>" + pi + " : float <br>" + myDouble + " : double <br>" + isTrue + " : boolean";
         }
-        function clrScreen() {
+        function clearContent() {
             result1.innerHTML = "";
         }
     </script>
 
     <!--2) Printing text ------------------------------------------------------------------------>
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Printing a text</h3>
-        <input type="text" class="form-control" id="num21" value="Hello World" readonly>
-        <button class="btn btn-info mt-2 w-50" onclick="Check2()">Print</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result2" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Printing a text</h3>
+            <input type="text" class="form-control" id="num21" value="Hello World" readonly>
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check2()">Print</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result2" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check2() {
             result2.innerHTML = num21.value;
         }
-        function clrScreen() {
+        function clearContent() {
             result2.innerHTML = "";
         }
     </script>
 
     <!--3) Sum of 2 numbrs -------------------------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Sum of 2 numbers</h3>
-
-        <input type="text" class="form-control " id="num31" placeholder="Enter 1st number">
-        <input type="text" class="form-control " id="num32" placeholder="Enter 2nd number">
-        <button class="btn btn-info mt-2 w-50" onclick="Check3()">Sum</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result3" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Sum of 2 numbers</h3>
+            <input type="text" class="form-control mt-2" id="num31" placeholder="Enter 1st number">
+            <input type="text" class="form-control mt-2" id="num32" placeholder="Enter 2nd number">
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check3()">Sum</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result3" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check3() {
-            var Num1 = parseInt(num31.value);
-            var Num2 = parseInt(num32.value);
+            var Num1 = parseFloat(num31.value);
+            var Num2 = parseFloat(num32.value);
             var Sum = Num1 + Num2;
             result3.innerHTML = `Sum is ${Sum}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num31.value = "";
             num32.value = "";
             result3.innerHTML = "";
@@ -92,13 +101,14 @@
 
     <!--4) Difference of 2 numbers --------------------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Difference of 2 numbers</h3>
-
-        <input type="text" class="form-control" id="num41" placeholder="Enter 1st number">
-        <input type="text" class="form-control" id="num42" placeholder="Enter 2nd number">
-        <button class="btn btn-info mt-2 w-50" onclick="Check4()">Difference</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result4" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Difference of 2 numbers</h3>
+            <input type="text" class="form-control mt-2" id="num41" placeholder="Enter 1st number">
+            <input type="text" class="form-control mt-2" id="num42" placeholder="Enter 2nd number">
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check4()">Difference</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result4" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check4() {
@@ -107,7 +117,7 @@
             var diff = Num1 - Num2;
             result4.innerHTML = `Difference is ${diff}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num41.value = "";
             num42.value = "";
             result4.innerHTML = "";
@@ -116,12 +126,13 @@
 
     <!--5) Cube of number ---------------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Cube of number</h3>
-
-        <input type="text" class="form-control " id="num51" placeholder="Enter a number">
-        <button class="btn btn-info mt-2 w-50" onclick="Check5()">Cube</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result5" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Cube of number</h3>
+            <input type="text" class="form-control " id="num51" placeholder="Enter a number">
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check5()">Cube</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result5" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check5() {
@@ -129,7 +140,7 @@
             var cube = Num1 * Num1 * Num1;
             result5.innerHTML = `Cube is: ${cube}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num51.value = "";
             result5.innerHTML = "";
         }
@@ -137,12 +148,13 @@
 
     <!--6) Swapping ----------------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Swapping</h3>
-
-        <input type="text" class="form-control" id="num61" placeholder="Enter 1st number">
-        <input type="text" class="form-control" id="num62" placeholder="Enter 2nd number">
-        <button class="btn btn-info mt-2 w-50" onclick="Check6()">Swap</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
+        <form action="">
+            <h3 class="text-dark text-center">Swapping</h3>
+            <input type="text" class="form-control mt-2" id="num61" placeholder="Enter 1st number">
+            <input type="text" class="form-control mt-2" id="num62" placeholder="Enter 2nd number">
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check6()">Swap</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+        </form>
     </div>
     <script>
         function Check6() {
@@ -150,7 +162,7 @@
             num61.value = num62.value;
             num62.value = temp;
         }
-        function clrScreen() {
+        function clearContent() {
             num61.value = "";
             num62.value = "";
         }
@@ -158,12 +170,13 @@
 
     <!--7) Factorial of number ------------------------------------------------->
     <div class="container border border-secondary shadow mt-3 p-3  rounded-4 text-center bg-info-subtle">
-        <h3 class="text-dark text-center">Factorial of number</h3>
-
-        <input type="text" class="form-control " id="num71" placeholder="Enter a number">
-        <button class="btn btn-info mt-2 w-50" onclick="Check7()">Factorial</button>
-        <button class="btn btn-info mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result7" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Factorial of number</h3>
+            <input type="text" class="form-control " id="num71" placeholder="Enter a number">
+            <button type="button" class="btn btn-info mt-2 w-50" onclick="Check7()">Factorial</button>
+            <button type="submit" class="btn btn-info mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result7" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check7() {
@@ -174,7 +187,7 @@
             }
             result7.innerHTML = `Factorial is: ${fact}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num71.value = "";
             result7.innerHTML = "";
         }

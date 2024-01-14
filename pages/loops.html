@@ -28,14 +28,20 @@
 </head>
 
 <body class="bg-black">
+
+    <div class="head text-center my-3">
+        <h3 class="text-white ">Loops</h3>
+    </div>
+
     <!--14) Palindrome or not -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Palindrome Number</h3>
-
-        <input type="text" class="form-control" id="num1" placeholder="Enter a number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check1()">Check</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result1" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Palindrome Number</h3>
+            <input type="text" class="form-control" id="num1" placeholder="Enter a number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check1()">Check</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result1" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check1() {
@@ -56,7 +62,7 @@
                 result1.innerHTML = `${original} is not palindrome `;
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num1.value = "";
             result1.innerHTML = "";
         }
@@ -64,12 +70,13 @@
 
     <!--15) Prime or not -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Prime or not</h3>
-
-        <input type="text" class="form-control" id="num2" placeholder="Enter a number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check2()">Check</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result2" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Prime or not</h3>
+            <input type="text" class="form-control" id="num2" placeholder="Enter a number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check2()">Check</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result2" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check2() {
@@ -87,7 +94,7 @@
                 result2.innerHTML = `${Num} is not prime`;
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num2.value = "";
             result2.innerHTML = "";
         }
@@ -95,12 +102,13 @@
 
     <!--16) Reverse of a number  -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Reverse of number</h3>
-
-        <input type="text" class="form-control" id="num3" placeholder="Enter a number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check3()">Reverse</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result3" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Reverse of number</h3>
+            <input type="text" class="form-control" id="num3" placeholder="Enter a number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check3()">Reverse</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result3" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check3() {
@@ -113,7 +121,7 @@
             }
             result3.innerHTML = `Reverse is ${rev}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num3.value = "";
             result3.innerHTML = "";
         }
@@ -121,12 +129,13 @@
 
     <!--17) Numbers into words -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Numbers into words</h3>
-
-        <input type="text" class="form-control" id="num4" placeholder="Enter a number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check4()">In Words</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result4" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Numbers into words</h3>
+            <input type="text" class="form-control" id="num4" placeholder="Enter a number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check4()">In Words</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result4" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check4() {
@@ -168,7 +177,7 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num4.value = "";
             result4.innerHTML = "";
         }
@@ -177,12 +186,13 @@
 
     <!--18)  Reverse a string -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Reverse of string</h3>
-
-        <input type="text" class="form-control" id="num5" placeholder="Enter a number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check5()">Reverse</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result5" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Reverse of string</h3>
+            <input type="text" class="form-control" id="num5" placeholder="Enter a number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check5()">Reverse</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick=" clearContent()">Clear</button>
+            <h4 id="result5" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check5() {
@@ -190,7 +200,7 @@
             var rev = str1.split("").reverse().join("");
             result5.innerHTML = rev;
         }
-        function clrScreen() {
+        function clearContent() {
             num5.value = "";
             result5.innerHTML = "";
         }
@@ -198,12 +208,13 @@
 
     <!--19) Fibonacci series -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Fibonacci Series</h3>
-
-        <input type="text" class="form-control" id="num6" placeholder="Enter the limit">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check6()">Print</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result6" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Fibonacci Series</h3>
+            <input type="text" class="form-control" id="num6" placeholder="Enter the limit">
+            <button type="button" class="btn btn-danger mt-2 " onclick="Check6()">Print</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result6" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check6() {
@@ -223,7 +234,7 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num6.value = "";
             result6.innerHTML = "";
         }
@@ -231,12 +242,13 @@
 
     <!--20) Floyd's triangle -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Floyd's Triangle</h3>
-
-        <input type="text" class="form-control" id="num7" placeholder="Enter the number of rows">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check7()">Print</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result7" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Floyd's Triangle</h3>
+            <input type="text" class="form-control" id="num7" placeholder="Enter the number of rows">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check7()">Print</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result7" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check7() {
@@ -250,7 +262,7 @@
                 result7.innerHTML += `<br>`;
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num7.value = "";
             result7.innerHTML = "";
         }
@@ -258,12 +270,13 @@
 
     <!--21) Factorial of given number -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Factorial</h3>
-
-        <input type="text" class="form-control" id="num8" placeholder="Enter the number">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check8()">Factorial</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result8" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Factorial</h3>
+            <input type="text" class="form-control" id="num8" placeholder="Enter the number">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check8()">Factorial</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result8" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check8() {
@@ -274,7 +287,7 @@
             }
             result8.innerHTML = `Factorial is: ${fact}`;
         }
-        function clrScreen() {
+        function clearContent() {
             num8.value = "";
             result8.innerHTML = "";
         }
@@ -282,12 +295,13 @@
 
     <!--22) Prime upto limit -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Prime with limit</h3>
-
-        <input type="text" class="form-control" id="num9" placeholder="Enter the limit">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check9()">Prime Numbers</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result9" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Prime with limit</h3>
+            <input type="text" class="form-control" id="num9" placeholder="Enter the limit">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check9()">Prime Numbers</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result9" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check9() {
@@ -305,7 +319,7 @@
                 }
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num9.value = "";
             result9.innerHTML = "";
         }
@@ -313,13 +327,14 @@
 
     <!--23) Multiplication Table -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Multiplication table</h3>
-
-        <input type="text" class="form-control my-2" id="num101" placeholder="Enter the number">
-        <input type="text" class="form-control my-2" id="num102" placeholder="Enter the limit">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check10()">Print</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result10" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Multiplication table</h3>
+            <input type="text" class="form-control my-2" id="num101" placeholder="Enter the number">
+            <input type="text" class="form-control my-2" id="num102" placeholder="Enter the limit">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check10()">Print</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result10" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check10() {
@@ -331,7 +346,7 @@
                 result10.innerHTML += `${Num} * ${i} = ${result} <br>`;
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num101.value = "";
             num102.value = "";
             result10.innerHTML = "";
@@ -341,10 +356,12 @@
 
     <!--24) Sum of 10 numbers -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Sum of 10 numbers</h3>
-        <button class="btn btn-danger mt-2 w-50" onclick="Check11()">Print Sum</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result11" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Sum of 10 numbers</h3>
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check11()">Print Sum</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result11" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check11() {
@@ -354,18 +371,20 @@
             }
             result11.innerHTML = "Sum of 10 numbers is: " + sum;
         }
-        function clrScreen() {
+        function clearContent() {
             result11.innerHTML = "";
         }
     </script>
 
     <!--25) Days of week -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Day of the week</h3>
-        <input type="text" class="form-control" id="num12" placeholder="Enter the day number (1-7)">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check12()">Print</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h5 id="result12" class="text-danger mt-2"></h5>
+        <form action="">
+            <h3 class="text-dark text-center">Day of the week</h3>
+            <input type="text" class="form-control" id="num12" placeholder="Enter the day number (1-7)">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check12()">Print</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h5 id="result12" class="text-danger mt-2"></h5>
+        </form>
     </div>
     <script>
         function Check12() {
@@ -396,7 +415,7 @@
                     result12.innerHTML = "Wrong Entry";
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num12.value = "";
             result12.innerHTML = "";
         }
@@ -404,11 +423,13 @@
 
     <!--26) String is palindrome or not -->
     <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-danger-subtle">
-        <h3 class="text-dark text-center">Palindrome String</h3>
-        <input type="text" class="form-control" id="num13" placeholder="Enter the string">
-        <button class="btn btn-danger mt-2 w-50" onclick="Check13()">Check</button>
-        <button class="btn btn-danger mt-2 " onclick="clrScreen()">Clear</button>
-        <h4 id="result13" class="text-danger mt-2"></h4>
+        <form action="">
+            <h3 class="text-dark text-center">Palindrome String</h3>
+            <input type="text" class="form-control" id="num13" placeholder="Enter the string">
+            <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check13()">Check</button>
+            <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
+            <h4 id="result13" class="text-danger mt-2"></h4>
+        </form>
     </div>
     <script>
         function Check13() {
@@ -420,7 +441,7 @@
                 result13.innerHTML = str1 + " is not palindrome";
             }
         }
-        function clrScreen() {
+        function clearContent() {
             num13.value = "";
             result13.innerHTML = "";
         }
