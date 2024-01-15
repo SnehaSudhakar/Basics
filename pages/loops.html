@@ -15,14 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
     <style>
         * {
             font-family: 'Roboto', sans-serif;
-        }
-
-        ul a {
-            color: #fff;
         }
 
         .active {
@@ -39,8 +39,8 @@
 
     <header class="fixed-top z-1 bg-black mb-3">
         <!-- Navigation bar -->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg p-3  mx-md-3">
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg p-3 ">
                 <!-- Logo text-->
                 <a href="../index.html" class="navbar-brand fs-2 fw-bolder text-white">Basics</a>
                 <!-- Toggle button -->
@@ -48,27 +48,28 @@
                     data-bs-target="#navItemList" aria-controls="navItemList" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <!-- Menu icon -->
-                    <span class="navbar-toggler-icon bg-light text-black rounded fs-4"></i></span>
+                    <span class="text-white"><i class="fa-solid fa-bars fs-1 p-3"></i></span>
                 </button>
 
                 <!-- collapsible navlist -->
                 <div class="collapse navbar-collapse " id="navItemList">
                     <ul class="navbar-nav text-center ms-md-auto ">
                         <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
-                                href="../index.html" class="text-decoration-none fs-5 ">Home</a></li>
+                                href="../index.html" class="text-white text-decoration-none fs-6">HOME</a></li>
                         <li class="nav-link position-relative list-unstyled  mx-md-3 py-sm-4 py-lg-0"><a
-                                href="./variable-prgrms.html" class="text-decoration-none fs-5">Variables</a>
+                                href="./variable-prgrms.html"
+                                class="text-white text-decoration-none fs-6 ">VARIABLES</a>
                         </li>
                         <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
-                                href="./if-prgrms.html" class="text-white text-decoration-none fs-5">If-Else</a></li>
+                                href="./if-prgrms.html" class="text-white text-decoration-none fs-6 ">IF-ELSE</a></li>
                         <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
-                                href="./loops.html" class=" text-decoration-none fs-5 active">Loops</a>
+                                href="./loops.html" class=" text-decoration-none fs-6 active">LOOPS</a>
                         </li>
                         <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
-                                href="./arrays.html" class=" text-decoration-none fs-5">Arrays</a>
+                                href="./arrays.html" class="text-white text-decoration-none fs-6">ARRAYS</a>
                         </li>
                         <li class="nav-link position-relative list-unstyled mx-md-3 py-sm-4 py-lg-0"><a
-                                href="./misc.html" class="text-decoration-none fs-5">Miscellaneous</a>
+                                href="./misc.html" class="text-white text-decoration-none fs-6">MISCELLANEOUS</a>
                         </li>
                     </ul>
                 </div>
@@ -92,21 +93,23 @@
     </div>
     <script>
         function Check1() {
-            var Num = parseInt(num1.value);
-            var original = Num;  //copy the number into temporary variable
-            var rem, rev = 0; //declare the reminder and initialize the reminder variable
-            while (Num > 0) {
-                rem = Num % 10;  //take reminder of the number
-                console.log("rem: " + rem)
-                rev = rev * 10 + rem;  //placing the reminder on 
-                console.log("reverse: " + rev)
-                Num = parseInt(Num / 10); //removing the last digit and removing the decimals
-                console.log("Num" + Num)
-            }
-            if (original == rev) {
-                result1.innerHTML = `${original} is palindrome `;
-            } else {
-                result1.innerHTML = `${original} is not palindrome `;
+            if (num1.value > 0) {
+                var Num = parseInt(num1.value);
+                var original = Num;  //copy the number into temporary variable
+                var rem, rev = 0; //declare the reminder and initialize the reminder variable
+                while (Num > 0) {
+                    rem = Num % 10;  //take reminder of the number
+                    console.log("rem: " + rem)
+                    rev = rev * 10 + rem;  //placing the reminder on 
+                    console.log("reverse: " + rev)
+                    Num = parseInt(Num / 10); //removing the last digit and removing the decimals
+                    console.log("Num" + Num)
+                }
+                if (original == rev) {
+                    result1.innerHTML = `${original} is palindrome `;
+                } else {
+                    result1.innerHTML = `${original} is not palindrome `;
+                }
             }
         }
         function clearContent() {
@@ -127,18 +130,22 @@
     </div>
     <script>
         function Check2() {
-            var Num = parseInt(num2.value);
-            var flag = 0;
-            for (var i = 2; i <= Num / 2; i++) {
-                if (Num % i == 0) {
-                    flag = 1;
-                    break;
+            if (num2.value > 0) {
+                var Num = parseInt(num2.value);
+                var flag = 0;
+                for (var i = 2; i <= Num / 2; i++) {
+                    if (Num % i == 0) {
+                        flag = 1;
+                        break;
+                    }
                 }
-            }
-            if (flag == 0) {
-                result2.innerHTML = `${Num} is prime`;
+                if (flag == 0) {
+                    result2.innerHTML = `${Num} is prime`;
+                } else {
+                    result2.innerHTML = `${Num} is not prime`;
+                }
             } else {
-                result2.innerHTML = `${Num} is not prime`;
+                result2.innerHTML = "Not a number"
             }
         }
         function clearContent() {
@@ -159,14 +166,18 @@
     </div>
     <script>
         function Check3() {
-            var Num = parseInt(num3.value); //converting to integer
-            var rem, rev = 0; // initializing the reverse and reminder
-            while (Num > 0) {
-                rem = Num % 10; //
-                rev = (rev * 10) + rem;
-                Num = parseInt(Num / 10);
+            if (num3.value > 0) {
+                var Num = parseInt(num3.value); //converting to integer
+                var rem, rev = 0; // initializing the reverse and reminder
+                while (Num > 0) {
+                    rem = Num % 10; //
+                    rev = (rev * 10) + rem;
+                    Num = parseInt(Num / 10);
+                }
+                result3.innerHTML = `Reverse is ${rev}`;
+            } else {
+                result3.innerHTML = "Not a number"
             }
-            result3.innerHTML = `Reverse is ${rev}`;
         }
         function clearContent() {
             num3.value = "";
@@ -186,42 +197,46 @@
     </div>
     <script>
         function Check4() {
-            var Num = num4.value;
-            for (let i = 0; i < Num.length; i++) {
-                switch (Num[i]) {
-                    case "1":
-                        result4.innerHTML += "One" + " ";
-                        break;
-                    case "2":
-                        result4.innerHTML += "Two" + " ";
-                        break;
-                    case "3":
-                        result4.innerHTML += "Three" + " ";
-                        break;
-                    case "4":
-                        result4.innerHTML += "Four" + " ";
-                        break;
-                    case "5":
-                        result4.innerHTML += "Five" + " ";
-                        break;
-                    case "6":
-                        result4.innerHTML += "Six" + " ";
-                        break;
-                    case "7":
-                        result4.innerHTML += "Seven" + " ";
-                        break;
-                    case "8":
-                        result4.innerHTML += "Eight" + " ";
-                        break;
-                    case "9":
-                        result4.innerHTML += "Nine" + " ";
-                        break;
-                    case "0":
-                        result4.innerHTML += "Zero" + " ";
-                        break;
-                    default:
-                        result4.innerHTML = "Not a number";
+            if (num4.value > 0) {
+                var Num = num4.value;
+                for (let i = 0; i < Num.length; i++) {
+                    switch (Num[i]) {
+                        case "1":
+                            result4.innerHTML += "One" + " ";
+                            break;
+                        case "2":
+                            result4.innerHTML += "Two" + " ";
+                            break;
+                        case "3":
+                            result4.innerHTML += "Three" + " ";
+                            break;
+                        case "4":
+                            result4.innerHTML += "Four" + " ";
+                            break;
+                        case "5":
+                            result4.innerHTML += "Five" + " ";
+                            break;
+                        case "6":
+                            result4.innerHTML += "Six" + " ";
+                            break;
+                        case "7":
+                            result4.innerHTML += "Seven" + " ";
+                            break;
+                        case "8":
+                            result4.innerHTML += "Eight" + " ";
+                            break;
+                        case "9":
+                            result4.innerHTML += "Nine" + " ";
+                            break;
+                        case "0":
+                            result4.innerHTML += "Zero" + " ";
+                            break;
+                        default:
+                            result4.innerHTML = "Not a number";
+                    }
                 }
+            } else {
+                result4.innerHTML = "Not a number";
             }
         }
         function clearContent() {
@@ -265,20 +280,24 @@
     </div>
     <script>
         function Check6() {
-            var f1 = 0, f2 = 1;
-            var limit = parseInt(num6.value);
-            if (limit == "1") {
-                result6.innerHTML = f1;
-            } else if (limit == "2") {
-                result6.innerHTML = `${f1},${f2}`;
-            } else {
-                result6.innerHTML = `${f1},${f2}`;
-                for (let i = 2; i <= limit; i++) {
-                    var fnew = f1 + f2;
-                    result6.innerHTML += `,${fnew}`;
-                    f1 = f2;
-                    f2 = fnew;
+            if (num6.value > 0) {
+                var f1 = 0, f2 = 1;
+                var limit = parseInt(num6.value);
+                if (limit == "1") {
+                    result6.innerHTML = f1;
+                } else if (limit == "2") {
+                    result6.innerHTML = `${f1},${f2}`;
+                } else {
+                    result6.innerHTML = `${f1},${f2}`;
+                    for (let i = 2; i <= limit; i++) {
+                        var fnew = f1 + f2;
+                        result6.innerHTML += `,${fnew}`;
+                        f1 = f2;
+                        f2 = fnew;
+                    }
                 }
+            } else {
+                result6.innerHTML = "Limit should be a number";
             }
         }
         function clearContent() {
@@ -299,15 +318,20 @@
     </div>
     <script>
         function Check7() {
-            var rows = num7.value;
-            var Num = 1;
-            for (let i = 1; i <= rows; i++) {  // setting rows
-                for (let j = 1; j <= i; j++) {
-                    result7.innerHTML += `${Num} `;
-                    Num++;
+            if (num7.value > 0) {
+                var rows = num7.value;
+                var Num = 1;
+                for (let i = 1; i <= rows; i++) {  // setting rows
+                    for (let j = 1; j <= i; j++) {
+                        result7.innerHTML += `${Num} `;
+                        Num++;
+                    }
+                    result7.innerHTML += `<br>`;
                 }
-                result7.innerHTML += `<br>`;
+            } else {
+                result7.innerHTML = "Not a number";
             }
+
         }
         function clearContent() {
             num7.value = "";
@@ -327,12 +351,16 @@
     </div>
     <script>
         function Check8() {
-            var Num = parseInt(num8.value);
-            var fact = 1;
-            for (var i = 1; i <= Num; i++) {
-                fact = fact * i;
+            if (num8.value > 0) {
+                var Num = parseInt(num8.value);
+                var fact = 1;
+                for (var i = 1; i <= Num; i++) {
+                    fact = fact * i;
+                }
+                result8.innerHTML = `Factorial is: ${fact}`;
+            } else {
+                result8.innerHTML = "Not a number"
             }
-            result8.innerHTML = `Factorial is: ${fact}`;
         }
         function clearContent() {
             num8.value = "";
@@ -352,18 +380,22 @@
     </div>
     <script>
         function Check9() {
-            var limit = num9.value;
-            for (let i = 2; i <= limit; i++) { // count iteration upto limit
-                var flag = 0;
-                for (let j = 2; j <= i / 2; j++) { //number iteation from 2 to limit/2 
-                    if (i % j == 0) {
-                        flag = 1;
-                        break;
+            if (num9.value > 0) {
+                var limit = num9.value;
+                for (let i = 2; i <= limit; i++) { // count iteration upto limit
+                    var flag = 0;
+                    for (let j = 2; j <= i / 2; j++) { //number iteation from 2 to limit/2 
+                        if (i % j == 0) {
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0) {
+                        result9.innerHTML += `${i} `;
                     }
                 }
-                if (flag == 0) {
-                    result9.innerHTML += `${i} `;
-                }
+            } else {
+                result9.innerHTML = "Not a number";
             }
         }
         function clearContent() {
@@ -385,12 +417,16 @@
     </div>
     <script>
         function Check10() {
-            var Num = num101.value;
-            var limit = num102.value;
-            var result;
-            for (let i = 1; i <= limit; i++) {
-                result = i * Num;
-                result10.innerHTML += `${Num} * ${i} = ${result} <br>`;
+            if ((num101.value && num102.value) > 0) {
+                var Num = num101.value;
+                var limit = num102.value;
+                var result;
+                for (let i = 1; i <= limit; i++) {
+                    result = i * Num;
+                    result10.innerHTML += `${Num} * ${i} = ${result} <br>`;
+                }
+            } else {
+                result10.innerHTML = "Not a number";
             }
         }
         function clearContent() {
