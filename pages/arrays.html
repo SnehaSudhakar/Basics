@@ -534,76 +534,74 @@
     </div>
     <script>
         function Check12() {
-            if ((num121.value && num122.value) > 0) {
-                let item1 = num121.value.split(" ");
-                let item2 = num122.value.split(" ");
-                let m = 0, n = 0;
 
-                //declaring array variables
-                let arr1 = new Array(2);
-                let arr2 = new Array(2);
-                let arrSum = new Array(2);
+            let item1 = num121.value.split(" ");
+            let item2 = num122.value.split(" ");
+            let m = 0, n = 0;
 
-                //declaring 3 arrays
-                for (let i = 0; i < 2; i++) {
-                    arr1[i] = new Array(3);
-                }
-                for (let i = 0; i < 2; i++) {
-                    arr2[i] = new Array(3);
-                }
-                for (let i = 0; i < 2; i++) {
-                    arrSum[i] = new Array(3);
-                }
+            //declaring array variables
+            let arr1 = new Array(2);
+            let arr2 = new Array(2);
+            let arrSum = new Array(2);
 
-                //input values to arrays
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        arr1[i][j] = parseInt(item1[m++]);
-                    }
-                }
-
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        arr2[i][j] = parseInt(item2[n++]);
-                    }
-                }
-
-                //display 1st matrix
-                result12.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        result12.innerHTML += `${arr1[i][j]} &nbsp`;
-                    }
-                    result12.innerHTML += `<br>`;
-                }
-                //display 2nd matrix
-                result12.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        result12.innerHTML += `${arr2[i][j]} &nbsp`;
-                    }
-                    result12.innerHTML += `<br>`;
-                }
-
-                // //finding the sum of arr1 and arr2
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        arrSum[i][j] = arr1[i][j] + arr2[i][j]
-                    }
-                }
-                console.log(arrSum)
-
-                //display the result
-                result12.innerHTML += `<strong>Sum :</strong> <br>`;
-                for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        result12.innerHTML += `${arrSum[i][j]} &nbsp`;
-                    }
-                    result12.innerHTML += `<br>`;
-                }
-            } else {
-                result12.innerHTML = "Enter numbers only";
+            //declaring 3 arrays
+            for (let i = 0; i < 2; i++) {
+                arr1[i] = new Array(3);
             }
+            for (let i = 0; i < 2; i++) {
+                arr2[i] = new Array(3);
+            }
+            for (let i = 0; i < 2; i++) {
+                arrSum[i] = new Array(3);
+            }
+
+            //input values to arrays
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    arr1[i][j] = parseInt(item1[m++]);
+                }
+            }
+
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    arr2[i][j] = parseInt(item2[n++]);
+                }
+            }
+
+            //display 1st matrix
+            result12.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    result12.innerHTML += `${arr1[i][j]} &nbsp`;
+                }
+                result12.innerHTML += `<br>`;
+            }
+            //display 2nd matrix
+            result12.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    result12.innerHTML += `${arr2[i][j]} &nbsp`;
+                }
+                result12.innerHTML += `<br>`;
+            }
+
+            // //finding the sum of arr1 and arr2
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    arrSum[i][j] = arr1[i][j] + arr2[i][j]
+                }
+            }
+            console.log(arrSum)
+
+            //display the result
+            result12.innerHTML += `<strong>Sum :</strong> <br>`;
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    result12.innerHTML += `${arrSum[i][j]} &nbsp`;
+                }
+                result12.innerHTML += `<br>`;
+            }
+
         }
         function clearContent() {
             num121.value = "";
@@ -634,79 +632,77 @@
     </div>
     <script>
         function Check13() {
-            if ((num131.value && num132.value) > 0) {
-                let item1 = num131.value.split(" ");
-                let item2 = num132.value.split(" ");
-                let m = 0, n = 0;
 
-                //declaring array variables
-                let arr1 = new Array(3);
-                let arr2 = new Array(3);
-                let arrProd = new Array(3);
+            let item1 = num131.value.split(" ");
+            let item2 = num132.value.split(" ");
+            let m = 0, n = 0;
 
-                //declaring 3 arrays
-                for (let i = 0; i < 3; i++) {
-                    arr1[i] = [];
-                }
-                for (let i = 0; i < 3; i++) {
-                    arr2[i] = [];
-                }
-                for (let i = 0; i < 3; i++) {
-                    arrProd[i] = [];
-                }
+            //declaring array variables
+            let arr1 = new Array(3);
+            let arr2 = new Array(3);
+            let arrProd = new Array(3);
 
-                //input values to 1st matrix
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        arr1[i][j] = parseInt(item1[m++]);
-                    }
-                }
-                console.log(arr1)
-                //input values to 2nd matrix
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        arr2[i][j] = parseInt(item2[n++]);
-                    }
-                }
-                console.log(arr2)
-
-                //display 1st matrix
-                result13.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        result13.innerHTML += `${arr1[i][j]} &nbsp`;
-                    }
-                    result13.innerHTML += `<br>`;
-                }
-
-                //display 2nd matrix
-                result13.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        result13.innerHTML += `${arr2[i][j]} &nbsp`;
-                    }
-                    result13.innerHTML += `<br>`;
-                }
-
-                // //finding the product of arr1 and arr2
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        arrProd[j][i] = arr1[i][j] * arr2[j][i];
-                    }
-                }
-                console.log(arrProd)
-
-                //display the result
-                result13.innerHTML += `<strong>Product :</strong> <br>`;
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        result13.innerHTML += `${arrProd[i][j]} &nbsp`;
-                    }
-                    result13.innerHTML += `<br>`;
-                }
-            } else {
-                result13.innerHTML = "Enter numbers only";
+            //declaring 3 arrays
+            for (let i = 0; i < 3; i++) {
+                arr1[i] = [];
             }
+            for (let i = 0; i < 3; i++) {
+                arr2[i] = [];
+            }
+            for (let i = 0; i < 3; i++) {
+                arrProd[i] = [];
+            }
+
+            //input values to 1st matrix
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arr1[i][j] = parseInt(item1[m++]);
+                }
+            }
+            console.log(arr1)
+            //input values to 2nd matrix
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arr2[i][j] = parseInt(item2[n++]);
+                }
+            }
+            console.log(arr2)
+
+            //display 1st matrix
+            result13.innerHTML = `<strong>Matrix 1 :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arr1[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+
+            //display 2nd matrix
+            result13.innerHTML += `<strong>Matrix 2 :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arr2[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+
+            // //finding the product of arr1 and arr2
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    arrProd[j][i] = arr1[i][j] * arr2[j][i];
+                }
+            }
+            console.log(arrProd)
+
+            //display the result
+            result13.innerHTML += `<strong>Product :</strong> <br>`;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    result13.innerHTML += `${arrProd[i][j]} &nbsp`;
+                }
+                result13.innerHTML += `<br>`;
+            }
+
         }
         function clearContent() {
             num131.value = "";
