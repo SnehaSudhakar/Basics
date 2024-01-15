@@ -180,16 +180,14 @@
     </div>
     <script>
         function Check3() {
-            if (num3.value > 0) {
-                var arr = num3.value.split(" ");
-                var sum = 0;
-                arr.forEach(element => { //iterating each element
-                    sum = sum + Number(element);
-                });
-                result3.innerHTML = `<strong>Sum of elements :</strong>${sum}`;
-            } else {
-                result3.innerHTML = "Enter numbers only";
-            }
+
+            var arr = num3.value.split(" ");
+            var sum = 0;
+            arr.forEach(element => { //iterating each element
+                sum = sum + Number(element);
+            });
+            result3.innerHTML = `<strong>Sum of elements :</strong>${sum}`;
+
         }
         function clearContent() {
             num3.value = "";
@@ -218,16 +216,14 @@
     </div>
     <script>
         function Check4() {
-            if ((num41.value && num42.value) > 0) {
-                let arr1 = num41.value.split(" ");
-                let arr2 = num42.value.split(" ");
 
-                //finding the sum
-                let Sum = arr1.map((value, index) => parseInt(value) + parseInt(arr2[index]));
-                result4.innerHTML = `ArraySum : ${Sum}`;
-            } else {
-                result4.innerHTML = "Enter numbers only";
-            }
+            let arr1 = num41.value.split(" ");
+            let arr2 = num42.value.split(" ");
+
+            //finding the sum
+            let Sum = arr1.map((value, index) => parseInt(value) + parseInt(arr2[index]));
+            result4.innerHTML = `ArraySum : ${Sum}`;
+
         }
         function clearContent() {
             num41.value = "";
@@ -252,13 +248,11 @@
     </div>
     <script>
         function Check5() {
-            if (num5.value > 0) {
-                var arr = num5.value.split(" ");
-                var out = Math.max(...arr) //math function to find largest element
-                result5.innerHTML = `<strong>Largest element :</strong> ${out}`;
-            } else {
-                result5.innerHTML = "Enter numbers only";
-            }
+
+            var arr = num5.value.split(" ");
+            var out = Math.max(...arr) //math function to find largest element
+            result5.innerHTML = `<strong>Largest element :</strong> ${out}`;
+
         }
         function clearContent() {
             num5.value = "";
@@ -282,13 +276,11 @@
     </div>
     <script>
         function Check6() {
-            if (num6.value > 0) {
-                var arr = num6.value.split(" ");
-                var out = arr.sort(function (a, b) { return a - b })//compare function is used with sort to sort in ascenting order
-                result6.innerHTML = `<strong>Sorted array :</strong> ${out}`;
-            } else {
-                result6.innerHTML = "Enter numbers only";
-            }
+
+            var arr = num6.value.split(" ");
+            var out = arr.sort(function (a, b) { return a - b })//compare function is used with sort to sort in ascenting order
+            result6.innerHTML = `<strong>Sorted array :</strong> ${out}`;
+
         }
         function clearContent() {
             num6.value = "";
