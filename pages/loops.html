@@ -315,7 +315,11 @@
             <input type="text" class="form-control" id="num7" placeholder="Enter the number of rows">
             <button type="button" class="btn btn-danger mt-2 w-50" onclick="Check7()">Print</button>
             <button type="submit" class="btn btn-danger mt-2 " onclick="clearContent()">Clear</button>
-            <h4 id="result7" class="text-danger mt-2"></h4>
+            <div class="outer-box  d-flex justify-content-center ">
+                <div class="pattern-box">
+                    <h4 id="result7" class="text-danger text-start mt-2"></h4>
+                </div>
+            </div>
         </form>
     </div>
     <script>
@@ -325,7 +329,7 @@
                 var Num = 1;
                 for (let i = 1; i <= rows; i++) {  // setting rows
                     for (let j = 1; j <= i; j++) {
-                        result7.innerHTML += `${Num} `;
+                        result7.innerHTML += `${Num}&nbsp`;
                         Num++;
                     }
                     result7.innerHTML += `<br>`;

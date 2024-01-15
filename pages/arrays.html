@@ -392,9 +392,13 @@
         function Check9() {
             var arr = num91.value.split(" ");
             var elm = num92.value;
-
-            var removedItm = arr.splice(arr.indexOf(elm), 1); //splice(item to remove,number of items to remove)
-            result9.innerHTML = `<strong>Array :</strong> ${arr}`;
+            let out = arr.includes(elm);
+            if (out == true) {
+                var removedItm = arr.splice(arr.indexOf(elm), 1); //splice(item to remove,number of items to remove)
+                result9.innerHTML = `<strong>Array :</strong> ${arr}`;
+            } else {
+                result9.innerHTML = "Element not found in array"
+            }
         }
         function clearContent() {
             num91.value = "";
