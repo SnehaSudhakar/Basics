@@ -237,7 +237,7 @@
     </script>
 
     <!--13) Amstrong or not ------------------------------------------------->
-    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-success-subtle">
+    <div class="container border border-secondary shadow my-3 p-3 rounded-4 text-center bg-success-subtle">
         <form action="">
             <h3 class="text-dark text-center">Amstrong or not</h3>
             <input type="text" class="form-control" id="num51" placeholder="Enter a number">
@@ -252,16 +252,12 @@
             if (num51.value > 0) {
                 var powr = (num51.value).length;
                 var Num = parseInt(num51.value);
-                console.log("pow: " + powr)
                 var original = Num;
                 var sum = 0;
                 while (Num > 0) {
                     var rem = Num % 10;  //taking the last digit
-                    console.log("rem: " + rem)
                     sum += Math.pow(rem, powr);
-                    console.log("sum: " + sum)
                     Num = parseInt(Num / 10); //taking the remaining digits 
-                    console.log("num: " + Num)
                 }
                 if (sum == original) {
                     result5.innerHTML = original + " is Amstrong";
