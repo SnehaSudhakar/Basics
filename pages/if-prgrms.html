@@ -250,22 +250,24 @@
     <script>
         function Check5() {
             if (num51.value > 0) {
+                var powr = (num51.value).length;
                 var Num = parseInt(num51.value);
-                var cube = 0;
-                var temp = Num;
+                console.log("pow: " + powr)
+                var original = Num;
+                var sum = 0;
                 while (Num > 0) {
                     var rem = Num % 10;  //taking the last digit
                     console.log("rem: " + rem)
-                    cube = cube + (rem * rem * rem);   //9+ 125+1
-                    console.log("cube: " + cube)
+                    sum += Math.pow(rem, powr);
+                    console.log("sum: " + sum)
                     Num = parseInt(Num / 10); //taking the remaining digits 
                     console.log("num: " + Num)
                 }
-                if (cube == temp) {
-                    result5.innerHTML = temp + " is Amstrong";
+                if (sum == original) {
+                    result5.innerHTML = original + " is Amstrong";
                 }
                 else {
-                    result5.innerHTML = temp + " is not Amstrong"
+                    result5.innerHTML = original + " is not Amstrong"
                 }
             } else {
                 result5.innerHTML = "Not a number"

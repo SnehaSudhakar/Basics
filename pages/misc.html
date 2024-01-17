@@ -42,6 +42,24 @@
             color: grey;
         }
 
+        #rcdStart:focus {
+            animation: blink 0.8s linear infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
         @media(width<992px) {
             .row {
                 width: 50%;
@@ -643,6 +661,86 @@
                     result18.innerHTML = "5";
                 }
             }
+        }
+    </script>
+
+    <!-- Webcam -->
+    <div class="container border border-secondary shadow mt-3 p-3 rounded-4 text-center bg-black">
+        <!-- <div class="container w-100  bg-black text-center "> -->
+        <h3 class="text-warning text-center">Webcam Recorder</h3>
+        <video id="screen" width="100%" height="auto" autoplay></video>
+        <button id="camStart" class="btn btn-lg " type="button"><i class="fa-solid fa-video fs-1 rounded"
+                style="color:white;" onclick="startCam()"></i></button>
+        <button id="rcdStart" class="btn btn-lg" type="button"><i class="fa-solid fa-record-vinyl fs-1"
+                style="color:red;" onclick="startRecord()"></i></button>
+        <button id="rcdStop" class="btn btn-lg" type="button"><i class="fa-solid fa-stop fs-1" style="color:red;"
+                onclick="stopRecord()"></i></button>
+    </div>
+    <script>
+        var Vdo_screen = document.getElementById("screen");
+        var Cam_start = document.getElementById("camStart");
+        var Rcd_start = document.getElementById("rcdStart");
+        var Rcd_stop = document.getElementById("rcdStop");
+
+        var mediarecorder;
+        var options = { mimeType: "video/webm;codecs=vp9" };
+        var recordedChunks = [];
+
+        //Start webcam
+        function startCam() {
+            //setting video &audio accessible
+            console.log("we have the video");
+            navigator.mediaDevices.getUserMedia({ video: { width: 1920, height: 1080 }, audio: true }).then(gotStream)
+                .catch(function (e) {  // error while opening the video screen
+                    if (confirm("An error with camera occured:(" + e.name + ")Do you want to reload?")) {
+                        location.reload();  //reload the page
+                    }
+                });
+        }
+
+        // if stream found
+        function gotStream(stream) {
+            console.log("Adding local stream");
+            Vdo_screen.srcObject = stream;
+            mediarecorder = new MediaRecorder(stream, options);
+            mediarecorder.ondataavailable = handleDataAvailable;
+            mediarecorder.onstop = download;
+        }
+
+        //Start recording
+        function startRecord() {
+            mediarecorder.start();
+            console.log("Recording...")
+        }
+
+        //Store recording 
+        function handleDataAvailable(event) {
+            if (event.data.size > 0) {
+                recordedChunks.push(event.data);  //media is stored as chunks
+                console.log(event.data);
+            }
+        }
+
+        // Stop recording
+        function stopRecord() {
+            mediarecorder.stop();
+            //Stop camera
+            const tracks = Vdo_screen.srcObject.getTracks(); //getTracks() will fetch the mediastream tracks  
+            tracks.forEach((track) => track.stop()); //tracks are returned as array
+            console.log("Recording stopped..")
+        }
+
+        //download the recorded video
+        function download() {
+            var blob = new Blob(recordedChunks, { type: 'video/webm' });  //blob is media storing type
+            var url = URL.createObjectURL(blob);  //generate url for blob
+            var a = document.createElement('a');  // creating link
+            document.body.appendChild(a);   //including the link in document
+            a.style = 'display:none';   //hiding the link
+            a.href = url; //assign url to the created link
+            a.download = 'WebCamtTest.webm';  //download tthe recording
+            a.click();  //click event on the link
+            window.URL.revokeObjectURL(url);  //opening the link
         }
     </script>
 
